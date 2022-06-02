@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.5.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.6.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -16,6 +16,7 @@ This is a JavaScript project that will give fake values.
   * [Hash](#hash)
   * [Name](#name)
   * [Phrase](#phrase)
+  * [Sentence](#sentence)
   * [Time](#time)
   * [UUID](#uuid)
 
@@ -134,6 +135,19 @@ Argument:
 * numberOfWords
   * Type: positive integer
   * Default: 12
+
+### Sentence
+
+For fake sentence.
+
+```javascript
+const sentence = getfake.sentence.any(numberOfWords);
+```
+
+Argument:
+* numberOfWords
+  * Type: positive integer
+  * If not set, then it will return sentence with some number of words.
 
 ### Time
 
