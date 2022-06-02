@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.2.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.3.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -14,6 +14,7 @@ This is a JavaScript project that will give fake values.
 * [Functions](#functions)
   * [Hash](#hash)
   * [Name](#name)
+  * [Phrase](#phrase)
   * [Time](#time)
   * [UUID](#uuid)
 
@@ -103,6 +104,20 @@ Available functions:
 * `maleFirstName`
 * `maleMiddleName`
 * `lastName`
+
+### Phrase
+
+For fake phrase.
+
+```javascript
+const phrase = getfake.phrase.any(numberOfWords);
+```
+
+Argument:
+* numberOfWords
+  * Type: positive integer
+  * Required: false
+  * Default: 12
 
 ### Time
 
