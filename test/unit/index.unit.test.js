@@ -24,6 +24,13 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing phrase', () => {
+    test('Should be able to return any phrase', () => {
+      const result = getfake.phrase.any();
+      expect(result.split(' ').length).toBe(12);
+    });
+  });
+
   describe('Testing time', () => {
     test('Should be able to return any time', () => {
       expect(getfake.time.zerothUtcTimestamp()).toBe('1970-01-01T00:00:00.000Z');
