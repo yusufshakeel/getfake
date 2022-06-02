@@ -43,6 +43,13 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing sentence', () => {
+    test('Should be able to return any sentence', () => {
+      const result = getfake.sentence.any();
+      expect(result.split(' ').length).toBeGreaterThan(1);
+    });
+  });
+
   describe('Testing uuid', () => {
     test('Should be able to return uuid any', () => {
       expect(getfake.uuid.any()).toMatch(
