@@ -3,6 +3,12 @@
 const getfake = require('../../index');
 
 describe('Testing getfake', () => {
+  describe('Testing email', () => {
+    test('Should be able to return any email', () => {
+      expect(getfake.email.any()).toMatch(/@example.com$/);
+    });
+  });
+
   describe('Testing hash', () => {
     test('Should be able to return sha256', () => {
       expect(getfake.hash.sha.sha256()).toMatch(/^[0-9a-f]{64}$/gi);

@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.3.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.4.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -12,6 +12,7 @@ This is a JavaScript project that will give fake values.
   * [Install](#install)
   * [Require](#require)
 * [Functions](#functions)
+  * [Email](#email)
   * [Hash](#hash)
   * [Name](#name)
   * [Phrase](#phrase)
@@ -38,6 +39,22 @@ const getfake = require('getfake');
 ```
 
 ## Functions
+
+### Email
+
+For fake email.
+
+```javascript
+const email = getfake.email.any(option);
+```
+
+Argument:
+
+* option
+  * Object: `{firstName: string, middleName: string, lastName: string, randomNumber: number, domain: string}`
+  * Default values:
+    * `{ firstName: name.femaleName(), middleName: '', lastName: '', randomNumber: '', domain: 'example.com' }`
+
 
 ### Hash
 
@@ -116,7 +133,6 @@ const phrase = getfake.phrase.any(numberOfWords);
 Argument:
 * numberOfWords
   * Type: positive integer
-  * Required: false
   * Default: 12
 
 ### Time
