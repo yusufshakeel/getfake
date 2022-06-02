@@ -1,10 +1,15 @@
 {
   "name": "getfake",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This is a JavaScript project that will give fake values.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precommit": "npm run lint && npm run search-circular-dependencies && npm run search-duplicate-code && npm run test",
+    "lint": "npx eslint -c .eslintrc.json src test",
+    "lint:fix": "npx eslint --fix -c .eslintrc.json src test",
+    "test": "jest -c jest.config.json",
+    "search-circular-dependencies": "npx madge -c ./index.js ./src",
+    "search-duplicate-code": "npx jscpd ./index.js ./src"
   },
   "repository": {
     "type": "git",
@@ -21,5 +26,18 @@
   "bugs": {
     "url": "https://github.com/yusufshakeel/getfake/issues"
   },
-  "homepage": "https://github.com/yusufshakeel/getfake#readme"
+  "homepage": "https://github.com/yusufshakeel/getfake#readme",
+  "engines": {
+    "node": ">11.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
+    "jscpd": "^3.4.5",
+    "madge": "^5.0.1",
+    "prettier": "^2.6.2"
+  }
 }
