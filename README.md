@@ -126,14 +126,16 @@ Available:
 
 This takes format like the following.
 
-`MMMM DDD - DD/MM/YYYY hh:mm:ss.sss`
+```javascript
+const datetime = getfake.time.formattedDateTime('MMMM DDD - DD/MM/YYYY hh:mm:ss.sss');
+```
 
 Where,
 
 ```text
 YYYY - for year like 2022
 
-MM - for month number 1-12
+MM - for month number 01-12
 
 MMM - for month short name like Jan
 
