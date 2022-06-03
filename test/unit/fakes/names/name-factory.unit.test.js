@@ -17,5 +17,6 @@ describe('Testing name factory', () => {
     expect(any.maleFirstName()).toBe('John');
     expect(any.maleMiddleName()).toBe('John');
     expect(any.lastName()).toBe('Doe');
+    expect(['Jane', 'John'].includes(any.firstName())).toBeTruthy();
   });
 });
