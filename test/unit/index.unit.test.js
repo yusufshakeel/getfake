@@ -30,6 +30,13 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing phone', () => {
+    test('Should be able to return any phone', () => {
+      const result = getfake.phone.any();
+      expect(result.length).toBe(10);
+    });
+  });
+
   describe('Testing phrase', () => {
     test('Should be able to return any phrase', () => {
       const result = getfake.phrase.any();
