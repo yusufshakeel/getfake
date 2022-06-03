@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.6.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.7.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -95,10 +95,11 @@ Available:
 For fake name.
 
 ```javascript
-const name = getfake.name.any.femaleName();
-const firstName = getfake.name.any.femaleFirstName();
-const middleName = getfake.name.any.femaleMiddleName();
+const firstName = getfake.name.any.firstName();
 const lastName = getfake.name.any.lastName();
+const femaleName = getfake.name.any.femaleName();
+const femaleFirstName = getfake.name.any.femaleFirstName();
+const femaleMiddleName = getfake.name.any.femaleMiddleName();
 ```
 
 Available name collection:
@@ -115,13 +116,14 @@ Available name collection:
 
 Available functions:
 
+* `firstName`
+* `lastName`
 * `femaleName`
 * `femaleFirstName`
 * `femaleMiddleName`
 * `maleName`
 * `maleFirstName`
 * `maleMiddleName`
-* `lastName`
 
 ### Phrase
 
