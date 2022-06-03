@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.8.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.9.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -15,6 +15,7 @@ This is a JavaScript project that will give fake values.
   * [Email](#email)
   * [Hash](#hash)
   * [Name](#name)
+  * [Phone](#phone)
   * [Phrase](#phrase)
   * [Sentence](#sentence)
   * [Time](#time)
@@ -125,6 +126,39 @@ Available functions:
 * `maleName`
 * `maleFirstName`
 * `maleMiddleName`
+
+### Phone
+
+For fake phone number.
+
+```javascript
+const phone = getfake.phone.any(numberOfDigits);
+```
+
+Arguments:
+
+* numberOfDigits
+  * Type: positive integer
+  * Default: 10
+
+Available functions:
+
+* `any`
+* `formatted`
+
+#### formatted
+
+Use this to get fake phone number with a given format.
+
+The character `x` will be replaced with digit.
+
+Example:
+
+Following will generate phone number like `+91 11000 00000`.
+
+```javascript
+const result = getfake.phone.formatted('+91 11xxx xxxxx');
+```
 
 ### Phrase
 
