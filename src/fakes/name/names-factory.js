@@ -40,6 +40,10 @@ module.exports = function namesFactory(source) {
     return pickName([...source.name.female, ...source.name.male]);
   };
 
+  const middleName = () => {
+    return firstName();
+  };
+
   return {
     femaleName,
     femaleFirstName,
@@ -48,6 +52,7 @@ module.exports = function namesFactory(source) {
     maleFirstName,
     maleMiddleName,
     lastName,
+    middleName,
     firstName
   };
 };
