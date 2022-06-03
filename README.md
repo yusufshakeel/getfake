@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.9.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.10.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -15,6 +15,7 @@ This is a JavaScript project that will give fake values.
   * [Email](#email)
   * [Hash](#hash)
   * [Name](#name)
+  * [Number](#number)
   * [Phone](#phone)
   * [Phrase](#phrase)
   * [Sentence](#sentence)
@@ -126,6 +127,51 @@ Available functions:
 * `maleName`
 * `maleFirstName`
 * `maleMiddleName`
+
+### Number
+
+For fake number.
+
+```javascript
+const intNumber = getfake.number.integer();
+const unsignedIntNumber = getfake.number.unsignedInteger();
+const floatNumber = getfake.number.float(decimal);
+const unsignedFloatNumber = getfake.number.unsignedFloat(decimal);
+const numberAsString = getfake.number.asString(totalNumberOfDigits, numberOfDecimalDigits);
+```
+
+Functions:
+
+* `integer`
+* `unsignedInteger`
+* `float`
+* `unsignedFloat`
+* `asString`
+
+#### float
+
+Arguments:
+* decimal
+  * Type: positive integer
+  * Default: 2
+
+#### unsignedFloat
+
+Arguments:
+* decimal
+  * Type: positive integer
+  * Default: 2
+
+#### asString
+
+Arguments:
+
+* totalNumberOfDigits
+  * Type: positive integer
+  * Default: 6
+* numberOfDecimalDigits
+  * Type: positive integer
+  * Default: 0
 
 ### Phone
 
