@@ -30,6 +30,13 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing number', () => {
+    test('Should be able to return any number', () => {
+      const result = getfake.number.asString(64, 16);
+      expect(result).toMatch(/^\d{48}.\d{16}$/);
+    });
+  });
+
   describe('Testing phone', () => {
     test('Should be able to return any phone', () => {
       const result = getfake.phone.any();
