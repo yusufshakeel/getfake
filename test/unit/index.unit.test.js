@@ -71,4 +71,10 @@ describe('Testing getfake', () => {
       );
     });
   });
+
+  describe('Testing word', () => {
+    test('Should be able to return word any', () => {
+      expect(getfake.word.any().length).toBeGreaterThan(1);
+    });
+  });
 });

@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.10.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.11.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -21,6 +21,9 @@ This is a JavaScript project that will give fake values.
   * [Sentence](#sentence)
   * [Time](#time)
   * [UUID](#uuid)
+  * [Word](#word)
+* [License](#license)
+* [Donate](#donate)
 
 
 ## Getting started
@@ -301,6 +304,19 @@ Available:
 * `any`
 * `v4`
 * `v5`
+
+### Word
+
+For fake word.
+
+```javascript
+const word = getfake.word.any();
+```
+
+Available functions:
+
+* `any` - this will return any meaningful word
+* `gibberish`
 
 
 ## License

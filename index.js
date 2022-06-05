@@ -9,6 +9,7 @@ const phrase = require('./src/fakes/phrase');
 const sentence = require('./src/fakes/sentence');
 const time = require('./src/fakes/time');
 const uuid = require('./src/fakes/uuid');
+const word = require('./src/fakes/word');
 
 module.exports = {
   email,
@@ -19,5 +20,6 @@ module.exports = {
   phrase,
   sentence,
   time,
-  uuid
+  uuid,
+  word
 };
