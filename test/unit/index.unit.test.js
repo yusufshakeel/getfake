@@ -19,6 +19,22 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing latitude', () => {
+    test('Should be able to return any latitude', () => {
+      let result = getfake.latitude.any();
+      expect(result).toBeGreaterThanOrEqual(-90);
+      expect(result).toBeLessThanOrEqual(90);
+    });
+  });
+
+  describe('Testing longitude', () => {
+    test('Should be able to return any longitude', () => {
+      let result = getfake.longitude.any();
+      expect(result).toBeGreaterThanOrEqual(-180);
+      expect(result).toBeLessThanOrEqual(180);
+    });
+  });
+
   describe('Testing name', () => {
     test('Should be able to return any random name', () => {
       const firstName = getfake.name.any.femaleName();
