@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.11.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.12.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -14,6 +14,8 @@ This is a JavaScript project that will give fake values.
 * [Functions](#functions)
   * [Email](#email)
   * [Hash](#hash)
+  * [Latitude](#latitude)
+  * [Longitude](#longitude)
   * [Name](#name)
   * [Number](#number)
   * [Phone](#phone)
@@ -94,6 +96,34 @@ Available:
 * `sha256`
 * `sha384`
 * `sha512`
+
+### Latitude
+
+For fake latitude.
+
+```javascript
+const latitude = getfake.latitude.any(decimalPlaces);
+```
+
+Arguments:
+
+* decimalPlaces
+  * Type: positive integer
+  * Default: 2
+
+### Longitude
+
+For fake longitude.
+
+```javascript
+const longitude = getfake.longitude.any(decimalPlaces);
+```
+
+Arguments:
+
+* decimalPlaces
+  * Type: positive integer
+  * Default: 2
 
 ### Name
 
