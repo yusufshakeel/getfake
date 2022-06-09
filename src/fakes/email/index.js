@@ -17,7 +17,9 @@ function any(
   }
 ) {
   const { firstName, middleName, lastName, randomNumber, domain } = option;
-  return `${firstName}${middleName}${lastName}${randomNumber}@${domain}`.toLowerCase();
+  return `${firstName}${middleName}${lastName}${randomNumber}@${domain}`
+    .toLowerCase()
+    .replace(/\s/g, '');
 }
 
 module.exports = { any };
