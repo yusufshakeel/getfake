@@ -21,7 +21,7 @@ describe('Testing getfake', () => {
 
   describe('Testing latitude', () => {
     test('Should be able to return any latitude', () => {
-      let result = getfake.latitude.any();
+      const result = getfake.latitude.any();
       expect(result).toBeGreaterThanOrEqual(-90);
       expect(result).toBeLessThanOrEqual(90);
     });
@@ -29,9 +29,17 @@ describe('Testing getfake', () => {
 
   describe('Testing longitude', () => {
     test('Should be able to return any longitude', () => {
-      let result = getfake.longitude.any();
+      const result = getfake.longitude.any();
       expect(result).toBeGreaterThanOrEqual(-180);
       expect(result).toBeLessThanOrEqual(180);
+    });
+  });
+
+  describe('Testing mac address', () => {
+    test('Should be able to return any mac address', () => {
+      expect(getfake.macAddress.any()).toMatch(
+        /^[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}$/gi
+      );
     });
   });
 
