@@ -107,6 +107,7 @@ module.exports = [
   'Jaelyn',
   'Jaime',
   'Jami',
+  'Jane',
   'Jen',
   'Jennifer',
   'Jessi',
