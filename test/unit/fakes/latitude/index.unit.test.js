@@ -9,7 +9,7 @@ describe('Testing latitude', () => {
         const lat = latitude.any();
         expect(lat).toBeGreaterThanOrEqual(-90);
         expect(lat).toBeLessThanOrEqual(90);
-        expect(`${lat}`).toMatch(/(-)?\d{1,2}(\.\d{2})$/);
+        expect(`${lat}`).toMatch(/(-)?\d{1,2}(\.\d{1,2})?$/);
       });
     });
 
@@ -18,7 +18,7 @@ describe('Testing latitude', () => {
         const lat = latitude.any(5);
         expect(lat).toBeGreaterThanOrEqual(-90);
         expect(lat).toBeLessThanOrEqual(90);
-        expect(`${lat}`).toMatch(/(-)?\d{1,2}(\.\d{5})$/);
+        expect(`${lat}`).toMatch(/(-)?\d{1,2}(\.\d{4,5})?$/);
       });
     });
   });
