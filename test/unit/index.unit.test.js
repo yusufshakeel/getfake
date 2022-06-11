@@ -25,6 +25,12 @@ describe('Testing getfake', () => {
         /^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}$/
       );
     });
+
+    test('Should be able to return any 10.*.*.* private ip address', () => {
+      expect(getfake.ipAddress.privateNetwork10.any()).toMatch(
+        /^10(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}$/
+      );
+    });
   });
 
   describe('Testing latitude', () => {
