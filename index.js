@@ -2,6 +2,7 @@
 
 const email = require('./src/fakes/email');
 const hash = require('./src/fakes/hash');
+const ipAddress = require('./src/fakes/ip-address');
 const latitude = require('./src/fakes/latitude');
 const longitude = require('./src/fakes/longitude');
 const macAddress = require('./src/fakes/mac-address');
@@ -17,6 +18,7 @@ const word = require('./src/fakes/word');
 module.exports = {
   email,
   hash,
+  ipAddress,
   latitude,
   longitude,
   macAddress,

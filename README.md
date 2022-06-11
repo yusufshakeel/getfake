@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.14.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.15.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -14,6 +14,7 @@ This is a JavaScript project that will give fake values.
 * [Functions](#functions)
   * [Email](#email)
   * [Hash](#hash)
+  * [IP Address](#ip-address)
   * [Latitude](#latitude)
   * [Longitude](#longitude)
   * [MAC Address](#mac-address)
@@ -79,7 +80,7 @@ const hash = getfake.hash.md.md5();
 
 Example: `2c3e74bae60b76106460f80f6e22ed95`
 
-Available:
+Available functions `getfake.hash.md.*`:
 
 * `any`
 * `md2`
@@ -96,13 +97,46 @@ const hash = getfake.hash.sha.sha256();
 
 Example: `d0a3e8faa7dee104414fcc55962c42c13cea0dab2b900a385a7c79c10859e574`
 
-Available:
+Available functions `getfake.hash.sha.*`:
 
 * `sha1`
 * `sha224`
 * `sha256`
 * `sha384`
 * `sha512`
+
+### IP Address
+
+For fake IP Address.
+
+```javascript
+const ipAddress = getfake.ipAddress.any();
+```
+
+Example: `127.0.0.1`
+
+Available functions `getfake.ipAddress.*`:
+
+* `any`
+* `localhost`
+
+#### any
+
+```javascript
+const ipAddress = getfake.ipAddress.any();
+```
+
+Range: 0.0.0.0 to 255.255.255.255
+
+#### localhost
+
+```javascript
+const ipAddress = getfake.ipAddress.localhost.any();
+```
+
+Available functions `getfake.ipAddress.localhost.*`:
+
+* `any` - Range: 127.0.0.0 to 127.255.255.255
 
 ### Latitude
 
@@ -113,7 +147,6 @@ const latitude = getfake.latitude.any(decimalPlaces);
 ```
 
 Example: `-52.10329`
-
 
 Arguments:
 
@@ -169,7 +202,7 @@ Available name collection:
 * `southAsian`
 * `southEastAsian`
 
-Available functions:
+Available functions for the collections `getfake.name.*.*`:
 
 * `firstName`
 * `middleName`
@@ -191,7 +224,7 @@ const intNumber = getfake.number.integer();
 
 Example: `608189662`
 
-Functions:
+Available functions `getfake.number.*`:
 
 * `integer`
 * `unsignedInteger`
@@ -208,6 +241,7 @@ const floatNumber = getfake.number.float(decimal);
 Example: `-268213349.13458`
 
 Arguments:
+
 * decimal
   * Type: positive integer
   * Default: 2
@@ -221,6 +255,7 @@ const unsignedFloatNumber = getfake.number.unsignedFloat(decimal);
 Example: `268213349.13458`
 
 Arguments:
+
 * decimal
   * Type: positive integer
   * Default: 2
@@ -258,7 +293,7 @@ Arguments:
   * Type: positive integer
   * Default: 10
 
-Available functions:
+Available functions `getfake.phone.*`:
 
 * `any`
 * `formatted`
@@ -288,6 +323,7 @@ const phrase = getfake.phrase.any(numberOfWords);
 Example: `research depth food appointment cent`
 
 Argument:
+
 * numberOfWords
   * Type: positive integer
   * Default: 12
@@ -303,6 +339,7 @@ const sentence = getfake.sentence.any(numberOfWords);
 Example: `Keep calm and carry on.`
 
 Argument:
+
 * numberOfWords
   * Type: positive integer
   * If not set, then it will return sentence with some number of words.
@@ -317,7 +354,7 @@ const timestamp = getfake.time.utcTimestamp();
 
 Example: `2022-06-09T18:10:28.796Z`
 
-Available:
+Available functions `getfake.time.*`:
 
 * `epoch`
 * `fixedEpoch` - always returns a fixed value
@@ -363,10 +400,6 @@ ss - for second 01-59
 sss - for milliseconds 000-999
 ```
 
-Example: 
-
-For format `MMMM DDD - DD/MM/YYYY hh:mm:ss.sss` we will get `January Thu - 01/01/1970 00:10:20.123`
-
 ### UUID
 
 For fake UUID.
@@ -377,7 +410,7 @@ const uuid = getfake.uuid.any();
 
 Example: `64c1539f-4600-718d-cfa5-b649bb5ffb00`
 
-Available:
+Available functions `getfake.uuid.*`:
 
 * `any`
 * `v4`
@@ -393,7 +426,7 @@ const word = getfake.word.any();
 
 Example: `recipe`
 
-Available functions:
+Available functions `getfake.word.*`:
 
 * `any` - this will return any meaningful word
 * `gibberish`
