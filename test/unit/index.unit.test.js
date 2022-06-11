@@ -31,6 +31,12 @@ describe('Testing getfake', () => {
         /^10(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}$/
       );
     });
+
+    test('Should be able to return any 192.168.*.* private ip address', () => {
+      expect(getfake.ipAddress.privateNetwork192._168.any()).toMatch(
+        /^192.168(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){2}$/
+      );
+    });
   });
 
   describe('Testing latitude', () => {
