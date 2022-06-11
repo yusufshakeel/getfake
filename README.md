@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.15.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.16.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -119,6 +119,7 @@ Available functions `getfake.ipAddress.*`:
 
 * `any`
 * `localhost`
+* `privateNetwork10`
 
 #### any
 
@@ -137,6 +138,14 @@ const ipAddress = getfake.ipAddress.localhost.any();
 Available functions `getfake.ipAddress.localhost.*`:
 
 * `any` - Range: 127.0.0.0 to 127.255.255.255
+
+#### privateNetwork10
+
+```javascript
+const ipAddress = getfake.ipAddress.privateNetwork10.any();
+```
+
+Range: 10.0.0.0 to 10.255.255.255
 
 ### Latitude
 
