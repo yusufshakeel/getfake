@@ -1,0 +1,13 @@
+'use strict';
+
+const localhost = require('../../../../src/fakes/ip-address/localhost')();
+
+describe('Testing localhost ip address', () => {
+  describe('Testing any', () => {
+    test('Should be able to return any ip address', () => {
+      expect(localhost.any()).toMatch(
+        /^127(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}$/
+      );
+    });
+  });
+});
