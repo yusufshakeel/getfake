@@ -1,6 +1,6 @@
 {
   "name": "getfake",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "This is a JavaScript project that will give fake values.",
   "main": "index.js",
   "scripts": {
