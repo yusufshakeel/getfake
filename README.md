@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.17.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.18.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -50,7 +50,7 @@ const getfake = require('getfake');
 
 ## Functions
 
-### Email
+## Email
 
 For fake email.
 
@@ -68,7 +68,7 @@ Argument:
     * `{ firstName: name.femaleName(), middleName: '', lastName: '', randomNumber: '', domain: 'example.com' }`
 
 
-### Hash
+## Hash
 
 ### MD
 
@@ -87,7 +87,7 @@ Available functions `getfake.hash.md.*`:
 * `md4`
 * `md5`
 
-#### SHA
+### SHA
 
 For fake SHA hash.
 
@@ -105,7 +105,7 @@ Available functions `getfake.hash.sha.*`:
 * `sha384`
 * `sha512`
 
-### IP Address
+## IP Address
 
 For fake IP Address.
 
@@ -123,7 +123,7 @@ Available functions `getfake.ipAddress.*`:
 * `privateNetwork192`
   * `_168`
 
-#### any
+### any
 
 ```javascript
 const ipAddress = getfake.ipAddress.any();
@@ -131,7 +131,7 @@ const ipAddress = getfake.ipAddress.any();
 
 Range: 0.0.0.0 to 255.255.255.255
 
-#### localhost
+### localhost
 
 ```javascript
 const ipAddress = getfake.ipAddress.localhost.any();
@@ -141,7 +141,7 @@ Available functions `getfake.ipAddress.localhost.*`:
 
 * `any` - Range: 127.0.0.0 to 127.255.255.255
 
-#### privateNetwork10
+### privateNetwork10
 
 ```javascript
 const ipAddress = getfake.ipAddress.privateNetwork10.any();
@@ -149,7 +149,7 @@ const ipAddress = getfake.ipAddress.privateNetwork10.any();
 
 Range: 10.0.0.0 to 10.255.255.255
 
-#### privateNetwork192._168
+### privateNetwork192._168
 
 ```javascript
 const ipAddress = getfake.ipAddress.privateNetwork192._168.any();
@@ -157,7 +157,7 @@ const ipAddress = getfake.ipAddress.privateNetwork192._168.any();
 
 Range: 192.168.0.0 to 192.168.255.255
 
-### Latitude
+## Latitude
 
 For fake latitude.
 
@@ -173,7 +173,7 @@ Arguments:
   * Type: positive integer
   * Default: 2
 
-### Longitude
+## Longitude
 
 For fake longitude.
 
@@ -189,7 +189,7 @@ Arguments:
   * Type: positive integer
   * Default: 2
 
-### MAC Address
+## MAC Address
 
 For fake MAC address.
 
@@ -199,7 +199,7 @@ const macAddress = getfake.macAddress.any();
 
 Example: `89:e1:07:6a:6f:57`
 
-### Name
+## Name
 
 For fake name.
 
@@ -233,7 +233,7 @@ Available functions for the collections `getfake.name.*.*`:
 * `maleFirstName`
 * `maleMiddleName`
 
-### Number
+## Number
 
 For fake number.
 
@@ -251,7 +251,7 @@ Available functions `getfake.number.*`:
 * `unsignedFloat`
 * `asString`
 
-#### float
+### float
 
 ```javascript
 const floatNumber = getfake.number.float(decimal);
@@ -265,7 +265,7 @@ Arguments:
   * Type: positive integer
   * Default: 2
 
-#### unsignedFloat
+### unsignedFloat
 
 ```javascript
 const unsignedFloatNumber = getfake.number.unsignedFloat(decimal);
@@ -279,7 +279,7 @@ Arguments:
   * Type: positive integer
   * Default: 2
 
-#### asString
+### asString
 
 ```javascript
 const numberAsString = getfake.number.asString(totalNumberOfDigits, numberOfDecimalDigits);
@@ -296,7 +296,7 @@ Arguments:
   * Type: positive integer
   * Default: 0
 
-### Phone
+## Phone
 
 For fake phone number.
 
@@ -317,7 +317,7 @@ Available functions `getfake.phone.*`:
 * `any`
 * `formatted`
 
-#### formatted
+### formatted
 
 Use this to get fake phone number with a given format.
 
@@ -331,7 +331,7 @@ Following will generate phone number like `+91 11000 00000`.
 const result = getfake.phone.formatted('+91 11xxx xxxxx');
 ```
 
-### Phrase
+## Phrase
 
 For fake phrase.
 
@@ -347,7 +347,7 @@ Argument:
   * Type: positive integer
   * Default: 12
 
-### Sentence
+## Sentence
 
 For fake sentence.
 
@@ -363,7 +363,7 @@ Argument:
   * Type: positive integer
   * If not set, then it will return sentence with some number of words.
 
-### Time
+## Time
 
 For fake time.
 
@@ -383,7 +383,7 @@ Available functions `getfake.time.*`:
 * `zerothUtcTimestamp`
 * `formattedDateTime`
 
-#### formattedDateTime
+### formattedDateTime
 
 This takes format like the following.
 
@@ -419,7 +419,7 @@ ss - for second 01-59
 sss - for milliseconds 000-999
 ```
 
-### UUID
+## UUID
 
 For fake UUID.
 
@@ -435,7 +435,7 @@ Available functions `getfake.uuid.*`:
 * `v4`
 * `v5`
 
-### Word
+## Word
 
 For fake word.
 
@@ -457,6 +457,6 @@ It's free :smiley:
 
 [MIT License](https://github.com/yusufshakeel/getfake/blob/main/LICENSE) Copyright (c) 2022 Yusuf Shakeel
 
-### Donate
+## Donate
 
 Feeling generous :smiley: [Donate via PayPal](https://www.paypal.me/yusufshakeel)
