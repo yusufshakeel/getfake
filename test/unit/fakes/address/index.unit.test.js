@@ -114,24 +114,32 @@ describe('Testing address', () => {
     });
 
     describe('Testing any', () => {
-      test('Should return any countryCode', () => {
+      test('Should return any countryCodeAlpha2', () => {
         expect(address.countryCodeAlpha2.any().length).toBeGreaterThan(1);
       });
     });
   });
 
   describe('Testing countryCodeAlpha3', () => {
-    describe('When country code is valid', () => {
-      test('Should be able to return countryCodeAlpha3', () => {
-        expect(address.countryCodeAlpha3('IND')).toBe('IND');
-        expect(address.countryCodeAlpha3('IN')).toBe('IND');
+    describe('Testing byCountryCode', () => {
+      describe('When country code is valid', () => {
+        test('Should be able to return countryCodeAlpha3', () => {
+          expect(address.countryCodeAlpha3.byCountryCode('IND')).toBe('IND');
+          expect(address.countryCodeAlpha3.byCountryCode('IN')).toBe('IND');
+        });
+      });
+
+      describe('When country code is invalid', () => {
+        test('Should return undefined', () => {
+          expect(address.countryCodeAlpha3.byCountryCode('***')).toBeUndefined();
+          expect(address.countryCodeAlpha3.byCountryCode()).toBeUndefined();
+        });
       });
     });
 
-    describe('When country code is invalid', () => {
-      test('Should return undefined', () => {
-        expect(address.countryCodeAlpha3('***')).toBeUndefined();
-        expect(address.countryCodeAlpha3()).toBeUndefined();
+    describe('Testing any', () => {
+      test('Should return any countryCodeAlpha3', () => {
+        expect(address.countryCodeAlpha3.any().length).toBeGreaterThan(1);
       });
     });
   });
