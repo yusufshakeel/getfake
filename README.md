@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.19.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.20.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -68,7 +68,7 @@ Example:
   "line3": "Close to The Luxury Palace",
   "landmark": "Behind Apple Store",
   "city": "Pretoria",
-  "state": "SomeStateName",
+  "state": "String",
   "country": "South Africa",
   "countryCode": {
     "alpha2": "ZA",
@@ -83,7 +83,74 @@ Example:
 
 Available functions `getfake.address.*`:
 
-* `any`
+* `any` - this will return address JSON
+* `line1`
+* `line2`
+* `line3`
+* `landmark`
+* `postcode`
+
+### line1
+
+This is for Flat Number, Home Number, Floor, etc.
+
+```javascript
+const line1 = getfake.address.line1();
+```
+
+Example: `Flat 1, Floor #21, La Grande Apartment`
+
+### line2
+
+This is for street, area, road etc.
+
+```javascript
+const line2 = getfake.address.line2();
+```
+
+Example: `9 Road, Sector #7`
+
+### line3
+
+This is for proximity.
+
+```javascript
+const line3 = getfake.address.line3();
+```
+
+Example: `Next to Green Lake View`
+
+### landmark
+
+This is for landmark.
+
+```javascript
+const landmark = getfake.address.landmark();
+```
+
+Example: `Opposite Grand Mall`
+
+### postcode
+
+This is for postcode.
+
+```javascript
+const postcode = getfake.address.postcode(start, end, prefix);
+```
+
+Example: `998030`
+
+Arguments:
+
+* start
+  * Type: positive integer
+  * Default: 100000
+* end
+  * Type: positive integer
+  * Default: 999999
+* prefix
+  * Type: string
+  * Default: `''` empty string
 
 ## Email
 
