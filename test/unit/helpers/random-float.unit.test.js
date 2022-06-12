@@ -23,7 +23,7 @@ describe('Testing random float', () => {
       const result = randomFloat(-1, 1, 6);
       expect(result).toBeLessThanOrEqual(1);
       expect(result).toBeGreaterThanOrEqual(-1);
-      expect(`${result}`).toMatch(/^(-)?\d+(\.\d{5,6})?$/);
+      expect(`${result}`).toMatch(/^(-)?\d+(\.\d{1,6})?$/);
     });
   });
 });

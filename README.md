@@ -99,6 +99,8 @@ Available functions `getfake.address.*`:
   * `any`
   * `byCountryCode`
 * `countryCodeAlpha2`
+  * `any`
+  * `byCountryCode`
 * `countryCodeAlpha3`
 * `countryCodeNumeric`
 * `lat`
@@ -239,6 +241,33 @@ const country = getfake.address.country.byCountryCode(countryCode);
 ```
 
 Example: `India`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
+### countryCodeAlpha2.any
+
+This is for 2 characters country code.
+
+```javascript
+const country = getfake.address.countryCodeAlpha2.any();
+```
+
+Example: `IN`
+
+### countryCodeAlpha2.byCountryCode
+
+This is for 2 characters country code.
+
+```javascript
+const country = getfake.address.countryCodeAlpha2.byCountryCode(countryCode);
+```
+
+Example: `IN`
 
 Arguments:
 
