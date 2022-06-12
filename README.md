@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.22.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.23.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -96,6 +96,8 @@ Available functions `getfake.address.*`:
   * `any`
   * `byCountryCode`
 * `country`
+  * `any`
+  * `byCountryCode`
 * `countryCodeAlpha2`
 * `countryCodeAlpha3`
 * `countryCodeNumeric`
@@ -218,12 +220,22 @@ Arguments:
 
 For invalid `countryCode` it will return `undefined`.
 
-### country
+### country.any
 
 This is for country.
 
 ```javascript
-const country = getfake.address.country(countryCode);
+const country = getfake.address.country.any();
+```
+
+Example: `India`
+
+### country.byCountryCode
+
+This is for country.
+
+```javascript
+const country = getfake.address.country.byCountryCode(countryCode);
 ```
 
 Example: `India`

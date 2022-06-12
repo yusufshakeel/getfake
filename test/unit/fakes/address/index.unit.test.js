@@ -73,17 +73,25 @@ describe('Testing address', () => {
   });
 
   describe('Testing country', () => {
-    describe('When country code is valid', () => {
-      test('Should be able to return country', () => {
-        expect(address.country('IND')).toBe('India');
-        expect(address.country('IN')).toBe('India');
+    describe('Testing byCountryCode', () => {
+      describe('When country code is valid', () => {
+        test('Should be able to return country', () => {
+          expect(address.country.byCountryCode('IND')).toBe('India');
+          expect(address.country.byCountryCode('IN')).toBe('India');
+        });
+      });
+
+      describe('When country code is invalid', () => {
+        test('Should return undefined', () => {
+          expect(address.country.byCountryCode('***')).toBeUndefined();
+          expect(address.country.byCountryCode()).toBeUndefined();
+        });
       });
     });
 
-    describe('When country code is invalid', () => {
-      test('Should return undefined', () => {
-        expect(address.country('***')).toBeUndefined();
-        expect(address.country()).toBeUndefined();
+    describe('Testing any', () => {
+      test('Should return any name', () => {
+        expect(address.country.any().length).toBeGreaterThan(1);
       });
     });
   });

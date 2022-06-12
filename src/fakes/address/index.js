@@ -49,8 +49,15 @@ function postcode(start = 100000, end = 999999, prefix = '') {
   return `${prefix}${randInt(start, end)}`;
 }
 
-function country(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.name;
+function country() {
+  const byCountryCode = countryCode => getCountryByCountryCode(countryCode?.toUpperCase())?.name;
+
+  const any = () => {
+    const result = countries.map(v => v.name);
+    return result[randInt(0, result.length - 1)];
+  };
+
+  return { byCountryCode, any };
 }
 
 function countryCodeAlpha2(countryCode) {
@@ -125,7 +132,7 @@ module.exports = {
   postcode,
   capital: capital(),
   state: state(),
-  country,
+  country: country(),
   countryCodeAlpha2,
   countryCodeAlpha3,
   countryCodeNumeric,
