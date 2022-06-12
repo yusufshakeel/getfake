@@ -3,6 +3,12 @@
 const getfake = require('../../index');
 
 describe('Testing getfake', () => {
+  describe('Testing address', () => {
+    test('Should be able to return any address', () => {
+      expect(getfake.address.any()).toBeInstanceOf(Object);
+    });
+  });
+
   describe('Testing email', () => {
     test('Should be able to return any email', () => {
       expect(getfake.email.any()).toMatch(/@example.com$/);

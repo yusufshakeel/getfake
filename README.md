@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.18.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.19.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -12,6 +12,7 @@ This is a JavaScript project that will give fake values.
   * [Install](#install)
   * [Require](#require)
 * [Functions](#functions)
+  * [Address](#address)
   * [Email](#email)
   * [Hash](#hash)
   * [IP Address](#ip-address)
@@ -49,6 +50,40 @@ const getfake = require('getfake');
 ```
 
 ## Functions
+
+## Address
+
+For fake address.
+
+```javascript
+const address = getfake.address.any();
+```
+
+Example:
+
+```JSON
+{
+  "line1": "Suite 1, Floor #20, Oak Plaza",
+  "line2": "15 Street, Sector #4",
+  "line3": "Close to The Luxury Palace",
+  "landmark": "Behind Apple Store",
+  "city": "Pretoria",
+  "state": "SomeStateName",
+  "country": "South Africa",
+  "countryCode": {
+    "alpha2": "ZA",
+    "alpha3": "ZAF",
+    "numeric": "710"
+  },
+  "postcode": 909979,
+  "latitude": -30.559482,
+  "longitude": 22.937506
+}
+```
+
+Available functions `getfake.address.*`:
+
+* `any`
 
 ## Email
 
