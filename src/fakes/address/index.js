@@ -84,8 +84,16 @@ function countryCodeAlpha3() {
   return { byCountryCode, any };
 }
 
-function countryCodeNumeric(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeNumeric;
+function countryCodeNumeric() {
+  const byCountryCode = countryCode =>
+    getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeNumeric;
+
+  const any = () => {
+    const result = countries.map(v => v.countryCodeNumeric);
+    return result[randInt(0, result.length - 1)];
+  };
+
+  return { byCountryCode, any };
 }
 
 function lat(countryCode) {
@@ -151,7 +159,7 @@ module.exports = {
   country: country(),
   countryCodeAlpha2: countryCodeAlpha2(),
   countryCodeAlpha3: countryCodeAlpha3(),
-  countryCodeNumeric,
+  countryCodeNumeric: countryCodeNumeric(),
   lat,
   lng
 };

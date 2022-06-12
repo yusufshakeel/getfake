@@ -305,6 +305,33 @@ Arguments:
 
 For invalid `countryCode` it will return `undefined`.
 
+### countryCodeNumeric.any
+
+This is for numeric country code.
+
+```javascript
+const country = getfake.address.countryCodeNumeric.any();
+```
+
+Example: `356`
+
+### countryCodeNumeric.byCountryCode
+
+This is for numeric country code.
+
+```javascript
+const country = getfake.address.countryCodeNumeric.byCountryCode(countryCode);
+```
+
+Example: `356`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
 ### lat
 
 This is for latitude.

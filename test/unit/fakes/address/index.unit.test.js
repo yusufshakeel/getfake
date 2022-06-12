@@ -145,16 +145,25 @@ describe('Testing address', () => {
   });
 
   describe('Testing countryCodeNumeric', () => {
-    describe('When country code is valid', () => {
-      test('Should be able to return countryCodeNumeric', () => {
-        expect(address.countryCodeNumeric('IND')).toBe('356');
+    describe('Testing byCountryCode', () => {
+      describe('When country code is valid', () => {
+        test('Should be able to return countryCodeNumeric', () => {
+          expect(address.countryCodeNumeric.byCountryCode('IND')).toBe('356');
+          expect(address.countryCodeNumeric.byCountryCode('IN')).toBe('356');
+        });
+      });
+
+      describe('When country code is invalid', () => {
+        test('Should return undefined', () => {
+          expect(address.countryCodeNumeric.byCountryCode('***')).toBeUndefined();
+          expect(address.countryCodeNumeric.byCountryCode()).toBeUndefined();
+        });
       });
     });
 
-    describe('When country code is invalid', () => {
-      test('Should return undefined', () => {
-        expect(address.countryCodeNumeric('***')).toBeUndefined();
-        expect(address.countryCodeNumeric()).toBeUndefined();
+    describe('Testing any', () => {
+      test('Should return any countryCodeNumeric', () => {
+        expect(address.countryCodeNumeric.any().length).toBeGreaterThan(1);
       });
     });
   });
