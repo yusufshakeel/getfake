@@ -105,8 +105,14 @@ Available functions `getfake.address.*`:
   * `any`
   * `byCountryCode`
 * `countryCodeNumeric`
+  * `any`
+  * `byCountryCode`
 * `lat`
+  * `any`
+  * `byCountryCode`
 * `lng`
+  * `any`
+  * `byCountryCode`
 
 ### line1
 
@@ -332,12 +338,22 @@ Arguments:
 
 For invalid `countryCode` it will return `undefined`.
 
-### lat
+### lat.any
 
 This is for latitude.
 
 ```javascript
-const latitude = getfake.address.lat(countryCode);
+const latitude = getfake.address.lat.any();
+```
+
+Example: `-52.10329`
+
+### lat.byCountryCode
+
+This is for latitude.
+
+```javascript
+const latitude = getfake.address.lat.byCountryCode(countryCode);
 ```
 
 Example: `-52.10329`
@@ -347,7 +363,7 @@ Arguments:
 * countryCode
   * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
 
-For invalid `countryCode` or none it will return random latitude.
+For invalid `countryCode` it will return `undefined`.
 
 ### lng
 
