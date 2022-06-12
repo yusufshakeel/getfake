@@ -4,10 +4,15 @@ const randInt = require('../../helpers/random-integer');
 const apartmentNames = require('../../constants/addresses/apartment');
 const countries = require('../../constants/addresses/country');
 const landmarks = require('../../constants/addresses/landmark');
+const latitude = require('../latitude');
+const longitude = require('../longitude');
 
 const proxy = ['Opposite', 'Behind', 'Next to', 'Near', 'Close to'];
 
 const getRandomCountry = () => countries[randInt(0, countries.length - 1)];
+
+const getCountryByCountryCode = countryCode =>
+  countries.find(v => v.countryCodeAlpha3 === countryCode || v.countryCodeAlpha2 === countryCode);
 
 function line1() {
   const numberOfApartments = apartmentNames.length;
@@ -44,6 +49,30 @@ function postcode(start = 100000, end = 999999, prefix = '') {
   return `${prefix}${randInt(start, end)}`;
 }
 
+function country(countryCode) {
+  return getCountryByCountryCode(countryCode?.toUpperCase())?.name;
+}
+
+function countryCodeAlpha2(countryCode) {
+  return getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeAlpha2;
+}
+
+function countryCodeAlpha3(countryCode) {
+  return getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeAlpha3;
+}
+
+function countryCodeNumeric(countryCode) {
+  return getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeNumeric;
+}
+
+function lat(countryCode) {
+  return getCountryByCountryCode(countryCode?.toUpperCase())?.latitude ?? latitude.any(5);
+}
+
+function lng(countryCode) {
+  return getCountryByCountryCode(countryCode?.toUpperCase())?.longitude ?? longitude.any(5);
+}
+
 function any() {
   const selectedCountry = getRandomCountry();
   return {
@@ -65,4 +94,17 @@ function any() {
   };
 }
 
-module.exports = { any, line1, line2, line3, landmark, postcode };
+module.exports = {
+  any,
+  line1,
+  line2,
+  line3,
+  landmark,
+  postcode,
+  country,
+  countryCodeAlpha2,
+  countryCodeAlpha3,
+  countryCodeNumeric,
+  lat,
+  lng
+};
