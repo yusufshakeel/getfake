@@ -7,6 +7,8 @@ const landmarks = require('../../constants/addresses/landmark');
 
 const proxy = ['Opposite', 'Behind', 'Next to', 'Near', 'Close to'];
 
+const getRandomCountry = () => countries[randInt(0, countries.length - 1)];
+
 function line1() {
   const numberOfApartments = apartmentNames.length;
   const floor = randInt(1, 30);
@@ -38,26 +40,29 @@ function landmark() {
   return `${proxy[randInt(0, proxy.length - 1)]} ${randomLandmark}`;
 }
 
+function postcode(start = 100000, end = 999999, prefix = '') {
+  return `${prefix}${randInt(start, end)}`;
+}
+
 function any() {
-  const numberOfCountries = countries.length;
-  const selectedCountry = countries[randInt(0, numberOfCountries - 1)];
+  const selectedCountry = getRandomCountry();
   return {
     line1: line1(),
     line2: line2(),
     line3: line3(),
     landmark: landmark(),
     city: selectedCountry.capital,
-    state: 'SomeStateName',
+    state: 'String',
     country: selectedCountry.name,
     countryCode: {
       alpha2: selectedCountry.countryCodeAlpha2,
       alpha3: selectedCountry.countryCodeAlpha3,
       numeric: selectedCountry.countryCodeNumeric
     },
-    postcode: randInt(100000, 999999),
+    postcode: postcode(),
     latitude: selectedCountry.latitude,
     longitude: selectedCountry.longitude
   };
 }
 
-module.exports = { any, line1, line2, line3, landmark };
+module.exports = { any, line1, line2, line3, landmark, postcode };

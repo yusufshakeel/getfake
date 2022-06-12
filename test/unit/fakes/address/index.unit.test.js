@@ -12,7 +12,7 @@ describe('Testing address', () => {
         landmark: expect.any(String),
         city: expect.any(String),
         state: expect.any(String),
-        postcode: expect.any(Number),
+        postcode: expect.any(String),
         country: expect.any(String),
         countryCode: {
           alpha2: expect.any(String),
@@ -46,6 +46,29 @@ describe('Testing address', () => {
   describe('Testing landmark', () => {
     test('Should be able to return landmark', () => {
       expect(address.landmark().length).toBeGreaterThan(1);
+    });
+  });
+
+  describe('Testing postcode', () => {
+    describe('When using default range', () => {
+      test('Should be able to return postcode', () => {
+        const postcode = address.postcode();
+        expect(postcode).toMatch(/^\d{6}$/);
+      });
+    });
+
+    describe('When using custom range', () => {
+      test('Should be able to return postcode', () => {
+        const postcode = address.postcode(1, 10);
+        expect(postcode).toMatch(/^\d{1,2}$/);
+      });
+    });
+
+    describe('When using custom range and prefix', () => {
+      test('Should be able to return postcode', () => {
+        const postcode = address.postcode(1000, 9999, 'ZXCV');
+        expect(postcode).toMatch(/^ZXCV\d{4}$/);
+      });
     });
   });
 });
