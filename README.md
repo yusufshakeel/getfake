@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.20.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.21.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -89,6 +89,12 @@ Available functions `getfake.address.*`:
 * `line3`
 * `landmark`
 * `postcode`
+* `country`
+* `countryCodeAlpha2`
+* `countryCodeAlpha3`
+* `countryCodeNumeric`
+* `lat`
+* `lng`
 
 ### line1
 
@@ -151,6 +157,57 @@ Arguments:
 * prefix
   * Type: string
   * Default: `''` empty string
+
+### country
+
+This is for country.
+
+```javascript
+const country = getfake.address.country(countryCode);
+```
+
+Example: `India`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
+### lat
+
+This is for latitude.
+
+```javascript
+const latitude = getfake.address.lat(countryCode);
+```
+
+Example: `-52.10329`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` or none it will return random latitude.
+
+### lng
+
+This is for longitude.
+
+```javascript
+const longitude = getfake.address.lng(countryCode);
+```
+
+Example: `-100.77519`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` or none it will return random longitude.
 
 ## Email
 
