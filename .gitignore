@@ -105,3 +105,6 @@ dist
 
 # ide
 .idea
+
+# macOS
+.DS_Store
