@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.22.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.23.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -96,11 +96,23 @@ Available functions `getfake.address.*`:
   * `any`
   * `byCountryCode`
 * `country`
+  * `any`
+  * `byCountryCode`
 * `countryCodeAlpha2`
+  * `any`
+  * `byCountryCode`
 * `countryCodeAlpha3`
+  * `any`
+  * `byCountryCode`
 * `countryCodeNumeric`
+  * `any`
+  * `byCountryCode`
 * `lat`
+  * `any`
+  * `byCountryCode`
 * `lng`
+  * `any`
+  * `byCountryCode`
 
 ### line1
 
@@ -218,12 +230,22 @@ Arguments:
 
 For invalid `countryCode` it will return `undefined`.
 
-### country
+### country.any
 
 This is for country.
 
 ```javascript
-const country = getfake.address.country(countryCode);
+const country = getfake.address.country.any();
+```
+
+Example: `India`
+
+### country.byCountryCode
+
+This is for country.
+
+```javascript
+const country = getfake.address.country.byCountryCode(countryCode);
 ```
 
 Example: `India`
@@ -235,12 +257,103 @@ Arguments:
 
 For invalid `countryCode` it will return `undefined`.
 
-### lat
+### countryCodeAlpha2.any
+
+This is for 2 characters country code.
+
+```javascript
+const country = getfake.address.countryCodeAlpha2.any();
+```
+
+Example: `IN`
+
+### countryCodeAlpha2.byCountryCode
+
+This is for 2 characters country code.
+
+```javascript
+const country = getfake.address.countryCodeAlpha2.byCountryCode(countryCode);
+```
+
+Example: `IN`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
+### countryCodeAlpha3.any
+
+This is for 3 characters country code.
+
+```javascript
+const country = getfake.address.countryCodeAlpha3.any();
+```
+
+Example: `IND`
+
+### countryCodeAlpha3.byCountryCode
+
+This is for 3 characters country code.
+
+```javascript
+const country = getfake.address.countryCodeAlpha3.byCountryCode(countryCode);
+```
+
+Example: `IND`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
+### countryCodeNumeric.any
+
+This is for numeric country code.
+
+```javascript
+const country = getfake.address.countryCodeNumeric.any();
+```
+
+Example: `356`
+
+### countryCodeNumeric.byCountryCode
+
+This is for numeric country code.
+
+```javascript
+const country = getfake.address.countryCodeNumeric.byCountryCode(countryCode);
+```
+
+Example: `356`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
+### lat.any
 
 This is for latitude.
 
 ```javascript
-const latitude = getfake.address.lat(countryCode);
+const latitude = getfake.address.lat.any();
+```
+
+Example: `-52.10329`
+
+### lat.byCountryCode
+
+This is for latitude.
+
+```javascript
+const latitude = getfake.address.lat.byCountryCode(countryCode);
 ```
 
 Example: `-52.10329`
@@ -250,14 +363,24 @@ Arguments:
 * countryCode
   * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
 
-For invalid `countryCode` or none it will return random latitude.
+For invalid `countryCode` it will return `undefined`.
 
-### lng
+### lng.any
 
 This is for longitude.
 
 ```javascript
-const longitude = getfake.address.lng(countryCode);
+const longitude = getfake.address.lng.any();
+```
+
+Example: `-100.77519`
+
+### lng.byCountryCode
+
+This is for longitude.
+
+```javascript
+const longitude = getfake.address.lng.byCountryCode(countryCode);
 ```
 
 Example: `-100.77519`
@@ -267,7 +390,7 @@ Arguments:
 * countryCode
   * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
 
-For invalid `countryCode` or none it will return random longitude.
+For invalid `countryCode` it will return `undefined`.
 
 ## Email
 

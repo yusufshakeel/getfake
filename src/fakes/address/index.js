@@ -49,28 +49,69 @@ function postcode(start = 100000, end = 999999, prefix = '') {
   return `${prefix}${randInt(start, end)}`;
 }
 
-function country(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.name;
+function country() {
+  const byCountryCode = countryCode => getCountryByCountryCode(countryCode?.toUpperCase())?.name;
+
+  const any = () => {
+    const result = countries.map(v => v.name);
+    return result[randInt(0, result.length - 1)];
+  };
+
+  return { byCountryCode, any };
 }
 
-function countryCodeAlpha2(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeAlpha2;
+function countryCodeAlpha2() {
+  const byCountryCode = countryCode =>
+    getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeAlpha2;
+
+  const any = () => {
+    const result = countries.map(v => v.countryCodeAlpha2);
+    return result[randInt(0, result.length - 1)];
+  };
+
+  return { byCountryCode, any };
 }
 
-function countryCodeAlpha3(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeAlpha3;
+function countryCodeAlpha3() {
+  const byCountryCode = countryCode =>
+    getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeAlpha3;
+
+  const any = () => {
+    const result = countries.map(v => v.countryCodeAlpha3);
+    return result[randInt(0, result.length - 1)];
+  };
+
+  return { byCountryCode, any };
 }
 
-function countryCodeNumeric(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeNumeric;
+function countryCodeNumeric() {
+  const byCountryCode = countryCode =>
+    getCountryByCountryCode(countryCode?.toUpperCase())?.countryCodeNumeric;
+
+  const any = () => {
+    const result = countries.map(v => v.countryCodeNumeric);
+    return result[randInt(0, result.length - 1)];
+  };
+
+  return { byCountryCode, any };
 }
 
-function lat(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.latitude ?? latitude.any(5);
+function lat() {
+  const byCountryCode = countryCode =>
+    getCountryByCountryCode(countryCode?.toUpperCase())?.latitude;
+
+  const any = () => latitude.any(5);
+
+  return { byCountryCode, any };
 }
 
-function lng(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.longitude ?? longitude.any(5);
+function lng() {
+  const byCountryCode = countryCode =>
+    getCountryByCountryCode(countryCode?.toUpperCase())?.longitude;
+
+  const any = () => longitude.any(5);
+
+  return { byCountryCode, any };
 }
 
 function capital() {
@@ -125,10 +166,10 @@ module.exports = {
   postcode,
   capital: capital(),
   state: state(),
-  country,
-  countryCodeAlpha2,
-  countryCodeAlpha3,
-  countryCodeNumeric,
-  lat,
-  lng
+  country: country(),
+  countryCodeAlpha2: countryCodeAlpha2(),
+  countryCodeAlpha3: countryCodeAlpha3(),
+  countryCodeNumeric: countryCodeNumeric(),
+  lat: lat(),
+  lng: lng()
 };
