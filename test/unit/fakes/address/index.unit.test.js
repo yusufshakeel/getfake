@@ -196,4 +196,52 @@ describe('Testing address', () => {
       });
     });
   });
+
+  describe('Testing capital', () => {
+    describe('Testing byCountryCode', () => {
+      describe('When country code is valid', () => {
+        test('Should be able to return capital', () => {
+          expect(address.capital.byCountryCode('IND')).toBe('New Delhi');
+          expect(address.capital.byCountryCode('IN')).toBe('New Delhi');
+        });
+      });
+
+      describe('When country code is invalid', () => {
+        test('Should return undefined', () => {
+          expect(address.capital.byCountryCode('***')).toBeUndefined();
+          expect(address.capital.byCountryCode()).toBeUndefined();
+        });
+      });
+    });
+
+    describe('Testing any', () => {
+      test('Should return any capital', () => {
+        expect(address.capital.any().length).toBeGreaterThan(1);
+      });
+    });
+  });
+
+  describe('Testing state', () => {
+    describe('Testing byCountryCode', () => {
+      describe('When country code is valid', () => {
+        test('Should be able to return state', () => {
+          expect(address.state.byCountryCode('IND')).toBe('New Delhi');
+          expect(address.state.byCountryCode('IN')).toBe('New Delhi');
+        });
+      });
+
+      describe('When country code is invalid', () => {
+        test('Should return undefined', () => {
+          expect(address.state.byCountryCode('***')).toBeUndefined();
+          expect(address.state.byCountryCode()).toBeUndefined();
+        });
+      });
+    });
+
+    describe('Testing any', () => {
+      test('Should return any state', () => {
+        expect(address.state.any().length).toBeGreaterThan(1);
+      });
+    });
+  });
 });

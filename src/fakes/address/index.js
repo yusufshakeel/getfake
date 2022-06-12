@@ -73,6 +73,28 @@ function lng(countryCode) {
   return getCountryByCountryCode(countryCode?.toUpperCase())?.longitude ?? longitude.any(5);
 }
 
+function capital() {
+  const byCountryCode = countryCode => getCountryByCountryCode(countryCode?.toUpperCase())?.capital;
+
+  const any = () => {
+    const capitals = countries.map(v => v.capital);
+    return capitals[randInt(0, capitals.length - 1)];
+  };
+
+  return { byCountryCode, any };
+}
+
+function state() {
+  const byCountryCode = countryCode => getCountryByCountryCode(countryCode?.toUpperCase())?.state;
+
+  const any = () => {
+    const states = countries.map(v => v.state);
+    return states[randInt(0, states.length - 1)];
+  };
+
+  return { byCountryCode, any };
+}
+
 function any() {
   const selectedCountry = getRandomCountry();
   return {
@@ -81,7 +103,7 @@ function any() {
     line3: line3(),
     landmark: landmark(),
     city: selectedCountry.capital,
-    state: 'String',
+    state: selectedCountry.state,
     country: selectedCountry.name,
     countryCode: {
       alpha2: selectedCountry.countryCodeAlpha2,
@@ -101,6 +123,8 @@ module.exports = {
   line3,
   landmark,
   postcode,
+  capital: capital(),
+  state: state(),
   country,
   countryCodeAlpha2,
   countryCodeAlpha3,

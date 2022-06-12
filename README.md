@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.21.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.22.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -89,6 +89,12 @@ Available functions `getfake.address.*`:
 * `line3`
 * `landmark`
 * `postcode`
+* `capital`
+  * `any`
+  * `byCountryCode`
+* `state`
+  * `any`
+  * `byCountryCode`
 * `country`
 * `countryCodeAlpha2`
 * `countryCodeAlpha3`
@@ -158,6 +164,60 @@ Arguments:
   * Type: string
   * Default: `''` empty string
 
+### capital.any
+
+This is for capital.
+
+```javascript
+const capital = getfake.address.capital.any();
+```
+
+Example: `New Delhi`
+
+### capital.byCountryCode
+
+This is for capital.
+
+```javascript
+const capital = getfake.address.capital.byCountryCode(countryCode);
+```
+
+Example: `New Delhi`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
+### state.any
+
+This is for state.
+
+```javascript
+const state = getfake.address.state.any();
+```
+
+Example: `New Delhi`
+
+### state.byCountryCode
+
+This is for state.
+
+```javascript
+const state = getfake.address.state.byCountryCode(countryCode);
+```
+
+Example: `New Delhi`
+
+Arguments:
+
+* countryCode
+  * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
+
+For invalid `countryCode` it will return `undefined`.
+
 ### country
 
 This is for country.
@@ -225,7 +285,6 @@ Argument:
   * Object: `{firstName: string, middleName: string, lastName: string, randomNumber: number, domain: string}`
   * Default values:
     * `{ firstName: name.femaleName(), middleName: '', lastName: '', randomNumber: '', domain: 'example.com' }`
-
 
 ## Hash
 
