@@ -202,29 +202,31 @@ describe('Testing address', () => {
   });
 
   describe('Testing lng', () => {
-    describe('When country code is valid', () => {
-      test('Should be able to return lng', () => {
-        const lng = address.lng('IND');
-        const lng2 = address.lng('IN');
-        expect(lng).toBeGreaterThanOrEqual(-180);
-        expect(lng).toBeLessThanOrEqual(180);
-        expect(`${lng}`).toMatch(/(-)?\d{1,3}(\.\d{1,2})?$/);
-        expect(lng).toStrictEqual(lng2);
+    describe('Testing byCountryCode', () => {
+      describe('When country code is valid', () => {
+        test('Should be able to return lng', () => {
+          const lng = address.lng.byCountryCode('IND');
+          const lng2 = address.lng.byCountryCode('IN');
+          expect(lng).toBeGreaterThanOrEqual(-180);
+          expect(lng).toBeLessThanOrEqual(180);
+          expect(`${lng}`).toMatch(/(-)?\d{1,3}(\.\d{1,2})?$/);
+          expect(lng).toStrictEqual(lng2);
+        });
+      });
+
+      describe('When country code is invalid', () => {
+        test('Should return undefined', () => {
+          const lng = address.lng.byCountryCode('***');
+          const lng2 = address.lng.byCountryCode();
+          expect(lng).toBeUndefined();
+          expect(lng2).toBeUndefined();
+        });
       });
     });
 
-    describe('When country code is invalid', () => {
+    describe('Testing any', () => {
       test('Should return random latitude', () => {
-        const lng = address.lng('***');
-        expect(lng).toBeGreaterThanOrEqual(-180);
-        expect(lng).toBeLessThanOrEqual(180);
-        expect(`${lng}`).toMatch(/(-)?\d{1,3}(\.\d{1,2})?$/);
-      });
-    });
-
-    describe('When country code is not provided', () => {
-      test('Should return random latitude', () => {
-        const lng = address.lng();
+        const lng = address.lng.any();
         expect(lng).toBeGreaterThanOrEqual(-180);
         expect(lng).toBeLessThanOrEqual(180);
         expect(`${lng}`).toMatch(/(-)?\d{1,3}(\.\d{1,2})?$/);

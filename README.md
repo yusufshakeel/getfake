@@ -365,12 +365,22 @@ Arguments:
 
 For invalid `countryCode` it will return `undefined`.
 
-### lng
+### lng.any
 
 This is for longitude.
 
 ```javascript
-const longitude = getfake.address.lng(countryCode);
+const longitude = getfake.address.lng.any();
+```
+
+Example: `-100.77519`
+
+### lng.byCountryCode
+
+This is for longitude.
+
+```javascript
+const longitude = getfake.address.lng.byCountryCode(countryCode);
 ```
 
 Example: `-100.77519`
@@ -380,7 +390,7 @@ Arguments:
 * countryCode
   * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
 
-For invalid `countryCode` or none it will return random longitude.
+For invalid `countryCode` it will return `undefined`.
 
 ## Email
 

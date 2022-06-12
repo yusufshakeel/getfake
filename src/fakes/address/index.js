@@ -105,8 +105,13 @@ function lat() {
   return { byCountryCode, any };
 }
 
-function lng(countryCode) {
-  return getCountryByCountryCode(countryCode?.toUpperCase())?.longitude ?? longitude.any(5);
+function lng() {
+  const byCountryCode = countryCode =>
+    getCountryByCountryCode(countryCode?.toUpperCase())?.longitude;
+
+  const any = () => longitude.any(5);
+
+  return { byCountryCode, any };
 }
 
 function capital() {
@@ -166,5 +171,5 @@ module.exports = {
   countryCodeAlpha3: countryCodeAlpha3(),
   countryCodeNumeric: countryCodeNumeric(),
   lat: lat(),
-  lng
+  lng: lng()
 };
