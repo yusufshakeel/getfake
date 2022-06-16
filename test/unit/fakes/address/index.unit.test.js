@@ -253,7 +253,7 @@ describe('Testing address', () => {
 
     describe('Testing any', () => {
       test('Should return any capital', () => {
-        expect(address.capital.any().length).toBeGreaterThan(1);
+        expect(address.capital.any().length).toBeGreaterThanOrEqual(0);
       });
     });
   });

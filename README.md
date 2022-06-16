@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.24.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.25.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -406,7 +406,74 @@ Example: `4532289439807445`
 Available functions `getfake.creditCard.*`:
 
 * `any`
+* `amex`
+* `dinersClub`
+* `discover`
+* `enRoute`
+* `jcb`
+* `mastercard`
 * `visa`
+* `voyager`
+
+### Amex
+
+For fake Amex credit card
+
+```javascript
+const amex = getfake.creditCard.amex.any();
+```
+
+Example: `346981070475953`
+
+### Diners Club
+
+For fake Diners Club credit card
+
+```javascript
+const dinersClub = getfake.creditCard.dinersClub.any();
+```
+
+Example: `3003779094744455`
+
+### Discover
+
+For fake Discover credit card
+
+```javascript
+const discover = getfake.creditCard.discover.any();
+```
+
+Example: `6011448881348903`
+
+### enRoute
+
+For fake enRoute credit card
+
+```javascript
+const enRoute = getfake.creditCard.enRoute.any();
+```
+
+Example: `2014601218861479`
+
+### JCB
+
+For fake JCB credit card
+
+```javascript
+const jcb = getfake.creditCard.jcb.any();
+```
+
+Example: `3561878578250742`
+
+### MasterCard
+
+For fake MasterCard credit card
+
+```javascript
+const mastercard = getfake.creditCard.mastercard.any();
+```
+
+Example: `5408987605338974`
 
 ### Visa
 
@@ -417,6 +484,16 @@ const visa = getfake.creditCard.visa.any();
 ```
 
 Example: `4539403188199721`
+
+### Voyager
+
+For fake Voyager credit card
+
+```javascript
+const voyager = getfake.creditCard.voyager.any();
+```
+
+Example: `8699736866519059`
 
 ## Email
 
