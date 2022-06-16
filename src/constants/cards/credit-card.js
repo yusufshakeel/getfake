@@ -6,6 +6,11 @@ const cardConfig = {
     prefix: ['34', '37'],
     cardLength: 15
   },
+  DISCOVER: {
+    issuingNetwork: 'DISCOVER',
+    prefix: ['6011'],
+    cardLength: 16
+  },
   MASTERCARD: {
     issuingNetwork: 'MASTERCARD',
     prefix: ['51', '52', '53', '54', '55'],
@@ -13,7 +18,7 @@ const cardConfig = {
   },
   VISA: {
     issuingNetwork: 'VISA',
-    prefix: ['4485', '4532', '4539', '4556', '4716', '4916', '4929'],
+    prefix: ['4', '4485', '4532', '4539', '4556', '4716', '4916', '4929', '40240071'],
     cardLength: 16
   }
 };

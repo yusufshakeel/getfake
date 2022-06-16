@@ -28,6 +28,14 @@ function amex() {
   return { any };
 }
 
+function discover() {
+  const any = () => {
+    return issuingNetworkSpecificCardNumber('DISCOVER');
+  };
+
+  return { any };
+}
+
 function visa() {
   const any = () => {
     return issuingNetworkSpecificCardNumber('VISA');
@@ -44,4 +52,10 @@ function mastercard() {
   return { any };
 }
 
-module.exports = { any, amex: amex(), visa: visa(), mastercard: mastercard() };
+module.exports = {
+  any,
+  amex: amex(),
+  discover: discover(),
+  visa: visa(),
+  mastercard: mastercard()
+};

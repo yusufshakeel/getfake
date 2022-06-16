@@ -407,6 +407,7 @@ Available functions `getfake.creditCard.*`:
 
 * `any`
 * `amex`
+* `discover`
 * `mastercard`
 * `visa`
 
@@ -415,17 +416,27 @@ Available functions `getfake.creditCard.*`:
 For fake Amex credit card
 
 ```javascript
-const visa = getfake.creditCard.amex.any();
+const amex = getfake.creditCard.amex.any();
 ```
 
 Example: `346981070475953`
+
+### Discover
+
+For fake Discover credit card
+
+```javascript
+const discover = getfake.creditCard.discover.any();
+```
+
+Example: `6011448881348903`
 
 ### MasterCard
 
 For fake MasterCard credit card
 
 ```javascript
-const visa = getfake.creditCard.mastercard.any();
+const mastercard = getfake.creditCard.mastercard.any();
 ```
 
 Example: `5408987605338974`

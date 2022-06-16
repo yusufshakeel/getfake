@@ -15,6 +15,12 @@ describe('Testing credit card', () => {
     });
   });
 
+  describe('Testing DISCOVER', () => {
+    test('Should be able to return any credit card', () => {
+      expect(creditCard.discover.any()).toMatch(/^(\d){16}$/);
+    });
+  });
+
   describe('Testing VISA', () => {
     test('Should be able to return any credit card', () => {
       expect(creditCard.visa.any()).toMatch(/^(\d){16}$/);
