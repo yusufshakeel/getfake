@@ -39,15 +39,21 @@ describe('Testing credit card', () => {
     });
   });
 
+  describe('Testing MASTERCARD', () => {
+    test('Should be able to return any credit card', () => {
+      expect(creditCard.mastercard.any()).toMatch(/^(\d){16}$/);
+    });
+  });
+
   describe('Testing VISA', () => {
     test('Should be able to return any credit card', () => {
       expect(creditCard.visa.any()).toMatch(/^(\d){16}$/);
     });
   });
 
-  describe('Testing MASTERCARD', () => {
+  describe('Testing VOYAGER', () => {
     test('Should be able to return any credit card', () => {
-      expect(creditCard.mastercard.any()).toMatch(/^(\d){16}$/);
+      expect(creditCard.voyager.any()).toMatch(/^(\d){16}$/);
     });
   });
 });

@@ -35,6 +35,11 @@ const cardConfig = {
     issuingNetwork: 'VISA',
     prefix: ['4', '4485', '4532', '4539', '4556', '4716', '4916', '4929', '40240071'],
     cardLength: 16
+  },
+  VOYAGER: {
+    issuingNetwork: 'VOYAGER',
+    prefix: ['8699'],
+    cardLength: 16
   }
 };
 

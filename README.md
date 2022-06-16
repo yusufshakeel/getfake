@@ -413,6 +413,7 @@ Available functions `getfake.creditCard.*`:
 * `jcb`
 * `mastercard`
 * `visa`
+* `voyager`
 
 ### Amex
 
@@ -483,6 +484,16 @@ const visa = getfake.creditCard.visa.any();
 ```
 
 Example: `4539403188199721`
+
+### Voyager
+
+For fake Voyager credit card
+
+```javascript
+const voyager = getfake.creditCard.voyager.any();
+```
+
+Example: `4556082285240956`
 
 ## Email
 

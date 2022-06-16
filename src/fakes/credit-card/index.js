@@ -76,6 +76,14 @@ function visa() {
   return { any };
 }
 
+function voyager() {
+  const any = () => {
+    return issuingNetworkSpecificCardNumber('VISA');
+  };
+
+  return { any };
+}
+
 module.exports = {
   any,
   amex: amex(),
@@ -83,6 +91,7 @@ module.exports = {
   discover: discover(),
   enRoute: enRoute(),
   jcb: jcb(),
+  mastercard: mastercard(),
   visa: visa(),
-  mastercard: mastercard()
+  voyager: voyager()
 };
