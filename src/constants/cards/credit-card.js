@@ -6,6 +6,11 @@ const cardConfig = {
     prefix: ['34', '37'],
     cardLength: 15
   },
+  DINERS_CLUB: {
+    issuingNetwork: 'DINERS CLUB',
+    prefix: ['300', '301', '302', '303', '36', '38'],
+    cardLength: 16
+  },
   DISCOVER: {
     issuingNetwork: 'DISCOVER',
     prefix: ['6011'],

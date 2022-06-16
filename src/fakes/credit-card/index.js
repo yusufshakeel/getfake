@@ -28,6 +28,14 @@ function amex() {
   return { any };
 }
 
+function dinersClub() {
+  const any = () => {
+    return issuingNetworkSpecificCardNumber('DINERS_CLUB');
+  };
+
+  return { any };
+}
+
 function discover() {
   const any = () => {
     return issuingNetworkSpecificCardNumber('DISCOVER');
@@ -55,6 +63,7 @@ function mastercard() {
 module.exports = {
   any,
   amex: amex(),
+  dinersClub: dinersClub(),
   discover: discover(),
   visa: visa(),
   mastercard: mastercard()

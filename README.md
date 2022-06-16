@@ -407,6 +407,7 @@ Available functions `getfake.creditCard.*`:
 
 * `any`
 * `amex`
+* `dinersClub`
 * `discover`
 * `mastercard`
 * `visa`
@@ -420,6 +421,16 @@ const amex = getfake.creditCard.amex.any();
 ```
 
 Example: `346981070475953`
+
+### Diners Club
+
+For fake Diners Club credit card
+
+```javascript
+const dinersClub = getfake.creditCard.dinersClub.any();
+```
+
+Example: `3003779094744455`
 
 ### Discover
 
