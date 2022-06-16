@@ -78,7 +78,7 @@ function visa() {
 
 function voyager() {
   const any = () => {
-    return issuingNetworkSpecificCardNumber('VISA');
+    return issuingNetworkSpecificCardNumber('VOYAGER');
   };
 
   return { any };

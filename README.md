@@ -493,7 +493,7 @@ For fake Voyager credit card
 const voyager = getfake.creditCard.voyager.any();
 ```
 
-Example: `4556082285240956`
+Example: `8699736866519059`
 
 ## Email
 
