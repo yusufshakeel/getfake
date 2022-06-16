@@ -52,9 +52,9 @@ function enRoute() {
   return { any };
 }
 
-function visa() {
+function jcb() {
   const any = () => {
-    return issuingNetworkSpecificCardNumber('VISA');
+    return issuingNetworkSpecificCardNumber('JCB');
   };
 
   return { any };
@@ -68,12 +68,21 @@ function mastercard() {
   return { any };
 }
 
+function visa() {
+  const any = () => {
+    return issuingNetworkSpecificCardNumber('VISA');
+  };
+
+  return { any };
+}
+
 module.exports = {
   any,
   amex: amex(),
   dinersClub: dinersClub(),
   discover: discover(),
   enRoute: enRoute(),
+  jcb: jcb(),
   visa: visa(),
   mastercard: mastercard()
 };

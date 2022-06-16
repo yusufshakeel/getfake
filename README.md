@@ -410,6 +410,7 @@ Available functions `getfake.creditCard.*`:
 * `dinersClub`
 * `discover`
 * `enRoute`
+* `jcb`
 * `mastercard`
 * `visa`
 
@@ -452,6 +453,16 @@ const enRoute = getfake.creditCard.enRoute.any();
 ```
 
 Example: `2014601218861479`
+
+### JCB
+
+For fake JCB credit card
+
+```javascript
+const jcb = getfake.creditCard.jcb.any();
+```
+
+Example: `3561878578250742`
 
 ### MasterCard
 

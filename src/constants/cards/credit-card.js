@@ -21,6 +21,11 @@ const cardConfig = {
     prefix: ['2014', '2149'],
     cardLength: 16
   },
+  JCB: {
+    issuingNetwork: 'JCB',
+    prefix: ['35'],
+    cardLength: 16
+  },
   MASTERCARD: {
     issuingNetwork: 'MASTERCARD',
     prefix: ['51', '52', '53', '54', '55'],
