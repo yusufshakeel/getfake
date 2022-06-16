@@ -9,6 +9,12 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing credit card', () => {
+    test('Should be able to return any credit card', () => {
+      expect(getfake.creditCard.any()).toMatch(/^(\d){16}$/);
+    });
+  });
+
   describe('Testing email', () => {
     test('Should be able to return any email', () => {
       expect(getfake.email.any()).toMatch(/@example.com$/);
