@@ -409,6 +409,7 @@ Available functions `getfake.creditCard.*`:
 * `amex`
 * `dinersClub`
 * `discover`
+* `enRoute`
 * `mastercard`
 * `visa`
 
@@ -441,6 +442,16 @@ const discover = getfake.creditCard.discover.any();
 ```
 
 Example: `6011448881348903`
+
+### enRoute
+
+For fake enRoute credit card
+
+```javascript
+const enRoute = getfake.creditCard.enRoute.any();
+```
+
+Example: `2014601218861479`
 
 ### MasterCard
 

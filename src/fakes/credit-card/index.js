@@ -44,6 +44,14 @@ function discover() {
   return { any };
 }
 
+function enRoute() {
+  const any = () => {
+    return issuingNetworkSpecificCardNumber('ENROUTE');
+  };
+
+  return { any };
+}
+
 function visa() {
   const any = () => {
     return issuingNetworkSpecificCardNumber('VISA');
@@ -65,6 +73,7 @@ module.exports = {
   amex: amex(),
   dinersClub: dinersClub(),
   discover: discover(),
+  enRoute: enRoute(),
   visa: visa(),
   mastercard: mastercard()
 };

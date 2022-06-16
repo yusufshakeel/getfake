@@ -16,6 +16,11 @@ const cardConfig = {
     prefix: ['6011'],
     cardLength: 16
   },
+  ENROUTE: {
+    issuingNetwork: 'ENROUTE',
+    prefix: ['2014', '2149'],
+    cardLength: 16
+  },
   MASTERCARD: {
     issuingNetwork: 'MASTERCARD',
     prefix: ['51', '52', '53', '54', '55'],
