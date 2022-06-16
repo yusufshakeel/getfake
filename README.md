@@ -406,7 +406,18 @@ Example: `4532289439807445`
 Available functions `getfake.creditCard.*`:
 
 * `any`
+* `mastercard`
 * `visa`
+
+### MasterCard
+
+For fake Visa credit card
+
+```javascript
+const visa = getfake.creditCard.mastercard.any();
+```
+
+Example: `5408987605338974`
 
 ### Visa
 

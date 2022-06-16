@@ -10,8 +10,14 @@ describe('Testing credit card', () => {
   });
 
   describe('Testing VISA', () => {
-    test('Should be able to return any visa credit card', () => {
+    test('Should be able to return any credit card', () => {
       expect(creditCard.visa.any()).toMatch(/^(\d){16}$/);
+    });
+  });
+
+  describe('Testing MASTERCARD', () => {
+    test('Should be able to return any credit card', () => {
+      expect(creditCard.mastercard.any()).toMatch(/^(\d){16}$/);
     });
   });
 });

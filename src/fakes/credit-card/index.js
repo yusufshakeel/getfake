@@ -8,6 +8,11 @@ const {
   randomCardNumberWithChecksum
 } = require('./random-card-number');
 
+const issuingNetworkSpecificCardNumber = network => {
+  const { prefix, cardLength } = randomPrefixAndCardLengthForIssuingNetwork(network);
+  return randomCardNumberWithChecksum(randomCardNumberWithoutChecksum(prefix, cardLength));
+};
+
 function any() {
   const { issuingNetwork: allIssuingNetwork } = creditCard;
   const randomIssuingNetwork = allIssuingNetwork[randInt(0, allIssuingNetwork.length - 1)];
@@ -17,11 +22,18 @@ function any() {
 
 function visa() {
   const any = () => {
-    const { prefix, cardLength } = randomPrefixAndCardLengthForIssuingNetwork('VISA');
-    return randomCardNumberWithChecksum(randomCardNumberWithoutChecksum(prefix, cardLength));
+    return issuingNetworkSpecificCardNumber('VISA');
   };
 
   return { any };
 }
 
-module.exports = { any, visa: visa() };
+function mastercard() {
+  const any = () => {
+    return issuingNetworkSpecificCardNumber('MASTERCARD');
+  };
+
+  return { any };
+}
+
+module.exports = { any, visa: visa(), mastercard: mastercard() };

@@ -9,10 +9,20 @@ const creditCard = require('../../../../src/constants/cards/credit-card');
 
 describe('Testing random card number', () => {
   describe('Testing randomPrefixAndCardLengthForIssuingNetwork', () => {
-    test('Should be able to return random card prefix and card length as per issuing network', () => {
-      let result = randomPrefixAndCardLengthForIssuingNetwork('VISA');
-      expect(result.cardLength).toStrictEqual(creditCard.cardConfig.VISA.cardLength);
-      expect(creditCard.cardConfig.VISA.prefix.includes(result.prefix)).toBeTruthy();
+    describe('Testing mastercard', () => {
+      test('Should be able to return random card prefix and card length as per issuing network', () => {
+        const result = randomPrefixAndCardLengthForIssuingNetwork('MASTERCARD');
+        expect(result.cardLength).toStrictEqual(creditCard.cardConfig.MASTERCARD.cardLength);
+        expect(creditCard.cardConfig.MASTERCARD.prefix.includes(result.prefix)).toBeTruthy();
+      });
+    });
+
+    describe('Testing visa', () => {
+      test('Should be able to return random card prefix and card length as per issuing network', () => {
+        const result = randomPrefixAndCardLengthForIssuingNetwork('VISA');
+        expect(result.cardLength).toStrictEqual(creditCard.cardConfig.VISA.cardLength);
+        expect(creditCard.cardConfig.VISA.prefix.includes(result.prefix)).toBeTruthy();
+      });
     });
   });
 
