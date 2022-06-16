@@ -24,11 +24,11 @@ function randomCardNumberWithChecksum(cardNumberWithoutChecksum) {
       const digit = +curr;
       if (index % 2 === 0) {
         const doubled = digit * 2;
-        return doubled > 9 ? sum + doubled - 9 : sum + doubled;
+        return sum + (doubled > 9 ? doubled - 9 : doubled);
       }
       return sum + digit;
     }, 0);
-  const checksum = 10 - (sum % 10);
+  const checksum = (sum * 9) % 10;
   return `${cardNumberWithoutChecksum}${checksum}`;
 }
 

@@ -24,9 +24,11 @@ describe('Testing random card number', () => {
 
   describe('Testing randomCardNumberWithChecksum', () => {
     test('Should be able to return random card number with checksum digit', () => {
+      expect(randomCardNumberWithChecksum('3852000002323')).toBe('38520000023237');
       expect(randomCardNumberWithChecksum('37500280571106')).toBe('375002805711069');
       expect(randomCardNumberWithChecksum('37144963539843')).toBe('371449635398431');
       expect(randomCardNumberWithChecksum('492996231434693')).toBe('4929962314346934');
+      expect(randomCardNumberWithChecksum('453957294150618')).toBe('4539572941506180');
       expect(randomCardNumberWithChecksum('519224323432654')).toBe('5192243234326547');
       expect(randomCardNumberWithChecksum('601150548895022')).toBe('6011505488950223');
     });
