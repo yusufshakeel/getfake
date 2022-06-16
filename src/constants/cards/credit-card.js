@@ -1,6 +1,11 @@
 'use strict';
 
 const cardConfig = {
+  AMEX: {
+    issuingNetwork: 'AMEX',
+    prefix: ['34', '37'],
+    cardLength: 15
+  },
   MASTERCARD: {
     issuingNetwork: 'MASTERCARD',
     prefix: ['51', '52', '53', '54', '55'],

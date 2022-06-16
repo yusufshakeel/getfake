@@ -20,6 +20,14 @@ function any() {
   return randomCardNumberWithChecksum(randomCardNumberWithoutChecksum(prefix, cardLength));
 }
 
+function amex() {
+  const any = () => {
+    return issuingNetworkSpecificCardNumber('AMEX');
+  };
+
+  return { any };
+}
+
 function visa() {
   const any = () => {
     return issuingNetworkSpecificCardNumber('VISA');
@@ -36,4 +44,4 @@ function mastercard() {
   return { any };
 }
 
-module.exports = { any, visa: visa(), mastercard: mastercard() };
+module.exports = { any, amex: amex(), visa: visa(), mastercard: mastercard() };

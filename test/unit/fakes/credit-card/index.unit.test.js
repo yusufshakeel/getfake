@@ -5,7 +5,13 @@ const creditCard = require('../../../../src/fakes/credit-card');
 describe('Testing credit card', () => {
   describe('Testing any', () => {
     test('Should be able to return any credit card', () => {
-      expect(creditCard.any()).toMatch(/^(\d){16}$/);
+      expect(creditCard.any()).toMatch(/^(\d){15,16}$/);
+    });
+  });
+
+  describe('Testing AMEX', () => {
+    test('Should be able to return any credit card', () => {
+      expect(creditCard.amex.any()).toMatch(/^(\d){15}$/);
     });
   });
 

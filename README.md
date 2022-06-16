@@ -406,12 +406,23 @@ Example: `4532289439807445`
 Available functions `getfake.creditCard.*`:
 
 * `any`
+* `amex`
 * `mastercard`
 * `visa`
 
+### Amex
+
+For fake Amex credit card
+
+```javascript
+const visa = getfake.creditCard.amex.any();
+```
+
+Example: `346981070475953`
+
 ### MasterCard
 
-For fake Visa credit card
+For fake MasterCard credit card
 
 ```javascript
 const visa = getfake.creditCard.mastercard.any();

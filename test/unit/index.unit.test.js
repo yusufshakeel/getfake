@@ -11,7 +11,7 @@ describe('Testing getfake', () => {
 
   describe('Testing credit card', () => {
     test('Should be able to return any credit card', () => {
-      expect(getfake.creditCard.any()).toMatch(/^(\d){16}$/);
+      expect(getfake.creditCard.any()).toMatch(/^(\d){15,16}$/);
     });
   });
 
