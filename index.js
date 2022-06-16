@@ -1,6 +1,7 @@
 'use strict';
 
 const address = require('./src/fakes/address');
+const creditCard = require('./src/fakes/credit-card');
 const email = require('./src/fakes/email');
 const hash = require('./src/fakes/hash');
 const ipAddress = require('./src/fakes/ip-address');
@@ -18,6 +19,7 @@ const word = require('./src/fakes/word');
 
 module.exports = {
   address,
+  creditCard,
   email,
   hash,
   ipAddress,

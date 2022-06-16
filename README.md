@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.23.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.24.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -13,6 +13,7 @@ This is a JavaScript project that will give fake values.
   * [Require](#require)
 * [Functions](#functions)
   * [Address](#address)
+  * [Credit Card](#credit-card)
   * [Email](#email)
   * [Hash](#hash)
   * [IP Address](#ip-address)
@@ -391,6 +392,31 @@ Arguments:
   * Type: string - uppercase - 2 or 3 characters like 'IND', 'IN'
 
 For invalid `countryCode` it will return `undefined`.
+
+## Credit Card
+
+For fake credit card.
+
+```javascript
+const creditCard = getfake.creditCard.any();
+```
+
+Example: `4532289439807445`
+
+Available functions `getfake.creditCard.*`:
+
+* `any`
+* `visa`
+
+### Visa
+
+For fake Visa credit card
+
+```javascript
+const visa = getfake.creditCard.visa.any();
+```
+
+Example: `4539403188199721`
 
 ## Email
 
