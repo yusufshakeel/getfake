@@ -7,7 +7,7 @@ const {
   rut
 } = require('../../../../../src/fakes/id/chile/rut');
 
-describe('Testing RUT', () => {
+describe('Testing Chile RUT id', () => {
   describe('Testing getSumOfDigits', () => {
     test('Should be able to return sum of digits for modulus 11 algorithm', () => {
       expect(getSumOfDigits('3471849')).toBe(143);

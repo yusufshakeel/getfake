@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.27.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.28.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -563,6 +563,9 @@ Example: `79.865.450-0`
 Available functions `getfake.id.*`:
 
 * `chile.rut.any`
+* `usa.ssn.*`
+  * `any`
+  * `last4`
 
 ### chile.rut.any
 
@@ -579,6 +582,32 @@ Arguments:
 * option
   * Type: `{numberOfDigits: number, formatted: boolean}`
   * Default: `{numberOfDigits: 9, formatted: true}`
+
+### usa.ssn.any
+
+For fake SSN.
+
+```javascript
+const ssn = getfake.id.usa.ssn.any(option);
+```
+
+Example: `545-11-2222`
+
+Arguments:
+
+* option
+  * Type: `{formatted: boolean}`
+  * Default: `{formatted: true}`
+
+### usa.ssn.last4
+
+For fake SSN last 4 digits.
+
+```javascript
+const ssnLast4Digits = getfake.id.usa.ssn.last4();
+```
+
+Example: `2222`
 
 ## IP Address
 
