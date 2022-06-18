@@ -27,6 +27,10 @@ function epoch() {
   return Math.floor(new Date() / 1000);
 }
 
+function epochInMicroSeconds() {
+  return Math.floor(new Date());
+}
+
 function fixedEpoch() {
   return TIME_FIXED_EPOCH;
 }
@@ -114,6 +118,7 @@ function formattedDateTime(format, dateInstance = new Date()) {
 module.exports = {
   utcTimestamp,
   epoch,
+  epochInMicroSeconds,
   fixedUtcTimestamp,
   fixedEpoch,
   zerothUtcTimestamp,

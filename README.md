@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.26.1-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.27.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -851,6 +851,7 @@ Example: `2022-06-09T18:10:28.796Z`
 Available functions `getfake.time.*`:
 
 * `epoch`
+* `epochInMicroSeconds`
 * `fixedEpoch` - always returns a fixed value
 * `zerothEpoch`
 * `utcTimestamp`
