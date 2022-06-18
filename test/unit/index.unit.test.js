@@ -31,6 +31,12 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing id', () => {
+    test('Should be able to return any id', () => {
+      expect(getfake.id.chile.rut.any()).toMatch(/^\d{2}(\.\d{3}){2}-(\d|K)$/);
+    });
+  });
+
   describe('Testing ip address', () => {
     test('Should be able to return any ip address', () => {
       expect(getfake.ipAddress.any()).toMatch(

@@ -4,6 +4,7 @@ const address = require('./src/fakes/address');
 const creditCard = require('./src/fakes/credit-card');
 const email = require('./src/fakes/email');
 const hash = require('./src/fakes/hash');
+const id = require('./src/fakes/id');
 const ipAddress = require('./src/fakes/ip-address');
 const latitude = require('./src/fakes/latitude');
 const longitude = require('./src/fakes/longitude');
@@ -22,6 +23,7 @@ module.exports = {
   creditCard,
   email,
   hash,
+  id,
   ipAddress,
   latitude,
   longitude,

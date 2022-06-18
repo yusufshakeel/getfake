@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.25.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.26.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -16,6 +16,7 @@ This is a JavaScript project that will give fake values.
   * [Credit Card](#credit-card)
   * [Email](#email)
   * [Hash](#hash)
+  * [ID](#id)
   * [IP Address](#ip-address)
   * [Latitude](#latitude)
   * [Longitude](#longitude)
@@ -548,6 +549,34 @@ Available functions `getfake.hash.sha.*`:
 * `sha256`
 * `sha384`
 * `sha512`
+
+## ID
+
+For fake IDs.
+
+```javascript
+const rut = getfake.id.chile.rut.any();
+```
+
+Example: `79.865.450-0`
+
+Available functions `getfake.id.*`:
+
+* `chile.rut.any`
+
+### chile.rut.any
+
+For fake RUT.
+
+```javascript
+const rut = getfake.id.chile.rut.any(option);
+```
+
+Arguments:
+
+* option
+  * Type: `{numberOfDigits: number, formatted: boolean}`
+  * Default: `{numberOfDigits: 9, formatted: true}`
 
 ## IP Address
 
