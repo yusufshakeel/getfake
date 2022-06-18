@@ -41,7 +41,7 @@ function getSumOfDigits(rutNumberWithoutCheckDigit) {
 
 function rut() {
   /**
-   * @param {{numberOfDigits: number, formatted: boolean}} option Default numberOfDigits=8 formatted=true
+   * @param {{numberOfDigits: number, formatted: boolean}} option Default numberOfDigits=9 formatted=true
    * @return {string}
    */
   const any = option => {
