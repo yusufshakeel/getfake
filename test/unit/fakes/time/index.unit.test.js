@@ -29,6 +29,14 @@ describe('Testing time', () => {
     });
   });
 
+  describe('Testing epochInMicroSeconds', () => {
+    test('Should be able to return epochInMicroSeconds', () => {
+      const epochInMicroSec = time.epochInMicroSeconds();
+      expect(typeof epochInMicroSec).toBe('number');
+      expect(`${epochInMicroSec}`).toMatch(/^\d+$/);
+    });
+  });
+
   describe('Testing fixed epoch', () => {
     test('Should be able to return epoch', () => {
       expect(time.fixedEpoch()).toBe(1604161316);
