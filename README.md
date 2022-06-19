@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.28.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.29.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -18,6 +18,7 @@ This is a JavaScript project that will give fake values.
   * [Hash](#hash)
   * [ID](#id)
   * [IP Address](#ip-address)
+  * [ISBN](#isbn)
   * [Latitude](#latitude)
   * [Longitude](#longitude)
   * [MAC Address](#mac-address)
@@ -660,6 +661,37 @@ const ipAddress = getfake.ipAddress.privateNetwork192._168.any();
 ```
 
 Range: 192.168.0.0 to 192.168.255.255
+
+## ISBN
+
+For fake ISBN.
+
+```javascript
+const isbn = getfake.isbn.v13.any();
+```
+
+Example: `978-0-46-222871-6`
+
+Available functions `getfake.isbn.*`:
+
+* `v13.any`
+
+### v13.any
+
+For fake ISBN-13.
+
+```javascript
+const isbn = getfake.isbn.v13.any(option);
+```
+
+Example: `978-0-46-222871-6`
+
+Arguments:
+
+* option
+  * Type: `{formatted: boolean}`
+  * Default: `{formatted: true}`
+
 
 ## Latitude
 

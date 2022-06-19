@@ -57,6 +57,12 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing isbn', () => {
+    test('Should be able to return any isbn13', () => {
+      expect(getfake.isbn.v13.any()).toMatch(/^(978|979)-\d-\d{2}-\d{6}-\d$/);
+    });
+  });
+
   describe('Testing latitude', () => {
     test('Should be able to return any latitude', () => {
       const result = getfake.latitude.any();
