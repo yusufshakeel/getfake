@@ -18,6 +18,7 @@ describe('Testing ISBN-13', () => {
     test('Should be able to return check digit', () => {
       expect(getCheckDigit('978046222871')).toBe('6');
       expect(getCheckDigit('979253973969')).toBe('8');
+      expect(getCheckDigit('0')).toBe('0');
     });
   });
 

@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.30.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.31.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -30,6 +30,8 @@ This is a JavaScript project that will give fake values.
   * [Time](#time)
   * [UUID](#uuid)
   * [Word](#word)
+* [Advance usage](#advance-usage)
+  * [From JSON template](#from-json-template)
 * [License](#license)
 * [Donate](#donate)
 
@@ -987,6 +989,126 @@ Available functions `getfake.word.*`:
 * `any` - this will return any meaningful word
 * `gibberish`
 
+
+## Advance usage
+
+## From JSON template
+
+To generate fake JSON using template.
+
+```javascript
+const getfake = require('getfake');
+
+const template = {
+  data: {
+    id: { $getfake: 'uuid.any' },
+    user: {
+      firstName: { $getfake: 'name.any.firstName' },
+      middleName: { $getfake: 'name.any.middleName' },
+      lastName: { $getfake: 'name.any.lastName' }
+    },
+    phone: {
+      countryName: { $getfake: 'address.country.byCountryCode', args: ['IND'] },
+      countryCode: 'IND',
+      number: { $getfake: 'phone.any' },
+      isVerified: true
+    },
+    createdAt: { $getfake: 'time.utcTimestamp' },
+    items: [
+      {
+        id: { $getfake: 'uuid.any' },
+        value: { $getfake: 'number.integer' }
+      }
+    ]
+  }
+};
+
+const json = getfake.json.fromTemplate(template);
+```
+
+Example:
+
+```json
+{
+  "data": {
+    "id": "813c2fcd-4e9b-9ec3-485b-f6b14d684542",
+    "user": {
+      "firstName": "Palash",
+      "middleName": "Russell",
+      "lastName": "Fadel"
+    },
+    "phone": {
+      "countryName": "India",
+      "countryCode": "IND",
+      "number": "9900000000",
+      "isVerified": true
+    },
+    "createdAt": "2022-06-22T18:29:38.890Z",
+    "items": [
+      {
+        "id": "000d8663-688e-2f10-04c4-bf48eb5252ee",
+        "value": 1773046214
+      }
+    ]
+  }
+}
+```
+
+### Setting template using $getfake field
+
+To set the value of a field we use something like the following.
+
+```json
+{
+  "id": { "$getfake": "uuid.any" }
+}
+```
+
+This is similar to `getfake.uuid.any()`.
+
+So, the above template will give us the following result.
+
+```json
+{
+  "id": "178be57a-9bd8-4ef2-8cbc-d6b6355a94d1"
+}
+```
+
+### Passing arguments to $getfake function
+
+In the following example we are passing argument.
+
+```json
+{
+  "countryName": { "$getfake": "address.country.byCountryCode", "args": ["IND"] }
+}
+```
+
+This is similar to `getfake.address.country.byCountryCode('IND')`
+
+So, the above template will give us the following result.
+
+```json
+{
+  "countryName": "India"
+}
+```
+
+Another example.
+
+```json
+{
+  "datetime": { "$getfake": "time.formattedDateTime", "args": ["MMMM DDD - DD/MM/YYYY hh:mm:ss.sss"] }
+}
+```
+
+This one will give the following output.
+
+```json
+{
+  "datetime": "June Thu - 24/06/2022 00:19:49.489"
+}
+```
 
 ## License
 
