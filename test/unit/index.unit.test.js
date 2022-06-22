@@ -63,6 +63,13 @@ describe('Testing getfake', () => {
     });
   });
 
+  describe('Testing JSON', () => {
+    test('Should be able to return any json from template', () => {
+      const result = getfake.json.fromTemplate({ id: { $getfake: 'uuid.any' } });
+      expect(result.id).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/gi);
+    });
+  });
+
   describe('Testing latitude', () => {
     test('Should be able to return any latitude', () => {
       const result = getfake.latitude.any();
