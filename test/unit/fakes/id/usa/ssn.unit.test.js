@@ -7,14 +7,14 @@ describe('Testing USA SSN id', () => {
     describe('When using default option', () => {
       test('Should be able to return ssn id', () => {
         const id = ssn().any();
-        expect(id).toMatch(/^(7[0-7][0-2]|[0-6]\d\d)-\d{2}-\d{4}$/);
+        expect(id).toMatch(/^(77[0-2]|7[0-6][0-9]|[0-6]\d\d)-\d{2}-\d{4}$/);
       });
     });
 
     describe('When using custom option', () => {
       test('Should be able to return ssn id', () => {
         const id = ssn().any({ formatted: false });
-        expect(id).toMatch(/^(7[0-7][0-2]|[0-6]\d\d)\d{6}$/);
+        expect(id).toMatch(/^(77[0-2]|7[0-6][0-9]|[0-6]\d\d)\d{6}$/);
       });
     });
   });
