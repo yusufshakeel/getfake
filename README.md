@@ -997,6 +997,8 @@ Available functions `getfake.word.*`:
 To generate fake JSON using template.
 
 ```javascript
+const getfake = require('getfake');
+
 const template = {
   data: {
     id: { $getfake: 'uuid.any' },
@@ -1074,7 +1076,7 @@ So, the above template will give us the following result.
 
 ### Passing arguments to $getfake function
 
-In the following example we are passing string argument.
+In the following example we are passing argument.
 
 ```json
 {
@@ -1100,7 +1102,7 @@ Another example.
 }
 ```
 
-This one will get the following output.
+This one will give the following output.
 
 ```json
 {
