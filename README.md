@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.31.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.32.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 This is a JavaScript project that will give fake values.
@@ -789,16 +789,53 @@ Available functions `getfake.number.*`:
 * `unsignedFloat`
 * `asString`
 
+### integer
+
+```javascript
+const intNumber = getfake.number.integer(min, max);
+```
+
+Example: `10`
+
+Arguments:
+
+* min
+  * Type: integer
+  * Default: -2147483647
+* max
+  * Type: integer
+  * Default: 2147483647
+
+### unsignedInteger
+
+```javascript
+const unsignedIntNumber = getfake.number.unsignedInteger(max);
+```
+
+Example: `10`
+
+Arguments:
+
+* max
+  * Type: integer
+  * Default: 2147483647
+
 ### float
 
 ```javascript
-const floatNumber = getfake.number.float(decimal);
+const floatNumber = getfake.number.float(min, max, decimal);
 ```
 
 Example: `-268213349.13458`
 
 Arguments:
 
+* min
+  * Type: integer
+  * Default: -2147483647
+* max
+  * Type: integer
+  * Default: 2147483647
 * decimal
   * Type: positive integer
   * Default: 2
@@ -806,13 +843,16 @@ Arguments:
 ### unsignedFloat
 
 ```javascript
-const unsignedFloatNumber = getfake.number.unsignedFloat(decimal);
+const unsignedFloatNumber = getfake.number.unsignedFloat(max, decimal);
 ```
 
 Example: `268213349.13458`
 
 Arguments:
 
+* max
+  * Type: integer
+  * Default: 2147483647
 * decimal
   * Type: positive integer
   * Default: 2

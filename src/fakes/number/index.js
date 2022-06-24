@@ -11,20 +11,27 @@ const {
   NUMERIC_DIGITS
 } = require('../../constants');
 
-function integer() {
-  return randomInteger(DEFAULT_MIN_NUMBER_INTEGER, DEFAULT_MAX_NUMBER_INTEGER);
+function integer(min = DEFAULT_MIN_NUMBER_INTEGER, max = DEFAULT_MAX_NUMBER_INTEGER) {
+  return randomInteger(min, max);
 }
 
-function unsignedInteger() {
-  return randomInteger(0, DEFAULT_MAX_NUMBER_INTEGER);
+function unsignedInteger(max = DEFAULT_MAX_NUMBER_INTEGER) {
+  return randomInteger(0, max);
 }
 
-function float(decimal = DEFAULT_NUMBER_OF_DECIMAL_PLACE) {
-  return randomFloat(DEFAULT_MIN_NUMBER_INTEGER, DEFAULT_MAX_NUMBER_INTEGER, decimal);
+function float(
+  min = DEFAULT_MIN_NUMBER_INTEGER,
+  max = DEFAULT_MAX_NUMBER_INTEGER,
+  decimal = DEFAULT_NUMBER_OF_DECIMAL_PLACE
+) {
+  return randomFloat(min, max, decimal);
 }
 
-function unsignedFloat(decimal = DEFAULT_NUMBER_OF_DECIMAL_PLACE) {
-  return randomFloat(0, DEFAULT_MAX_NUMBER_INTEGER, decimal);
+function unsignedFloat(
+  max = DEFAULT_MAX_NUMBER_INTEGER,
+  decimal = DEFAULT_NUMBER_OF_DECIMAL_PLACE
+) {
+  return randomFloat(0, max, decimal);
 }
 
 function asString(
