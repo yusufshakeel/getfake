@@ -11,7 +11,7 @@ export default function randomFloat(
   min: number,
   max: number,
   decimals: number = DEFAULT_NUMBER_OF_DECIMAL_PLACE
-) {
+): number {
   return parseFloat(
     (Math.random() * (Math.floor(max) - Math.ceil(min)) + Math.ceil(min)).toFixed(decimals)
   );
