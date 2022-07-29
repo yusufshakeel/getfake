@@ -15,12 +15,16 @@
   },
   "scripts": {
     "test": "jest -c jest.config.json",
-    "precommit": "npm run lint:src && npm run test",
-    "build": "npm run precommit && npm run build:esm && npm run build:cjs",
+    "precommit": "npm run lint && npm run test",
+    "remove-build-files": "rm -rf lib",
+    "build": "npm run precommit && npm run remove-build-files && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig-cjs.json",
+    "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "npx eslint -c .eslintrc.json src",
-    "lint:fix:src": "npx eslint --fix -c .eslintrc.json src"
+    "lint:fix:src": "npx eslint --fix -c .eslintrc.json src",
+    "lint:test": "npx eslint -c .eslintrc.json test",
+    "lint:fix:test": "npx eslint --fix -c .eslintrc.json test"
   },
   "repository": {
     "type": "git",
