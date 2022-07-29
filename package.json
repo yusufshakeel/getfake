@@ -2,14 +2,25 @@
   "name": "getfake",
   "version": "1.0.0",
   "description": "Generate fake values.",
-  "main": "index.js",
+  "main": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "files": [
+    "lib/**/*",
+    "!**/*.map"
+  ],
+  "exports": {
+    "import": "./lib/esm/index.js",
+    "require": "./lib/cjs/index.js",
+    "default": "./lib/esm/index.js"
+  },
   "scripts": {
-    "precommit": "npm run lint && npm run search-circular-dependencies && npm run search-duplicate-code && npm run test",
-    "lint": "npx eslint -c .eslintrc.json src test",
-    "lint:fix": "npx eslint --fix -c .eslintrc.json src test",
     "test": "jest -c jest.config.json",
-    "search-circular-dependencies": "npx madge -c ./index.js ./src",
-    "search-duplicate-code": "npx jscpd ./index.js ./src"
+    "precommit": "npm run lint:src && npm run test",
+    "build": "npm run precommit && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "lint:src": "npx eslint -c .eslintrc.json src",
+    "lint:fix:src": "npx eslint --fix -c .eslintrc.json src"
   },
   "repository": {
     "type": "git",
@@ -17,8 +28,12 @@
   },
   "keywords": [
     "fake",
+    "faker",
+    "fake-value",
     "js",
+    "ts",
     "javascript",
+    "typescript",
     "node"
   ],
   "author": "Yusuf Shakeel",
@@ -31,13 +46,16 @@
     "node": ">12.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.16.0",
+    "@types/jest": "^28.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^28.1.0",
-    "jscpd": "^3.4.5",
-    "madge": "^5.0.1",
-    "prettier": "^2.6.2"
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^28.1.3",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
   }
 }
