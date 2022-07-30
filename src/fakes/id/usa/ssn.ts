@@ -9,7 +9,7 @@ function ssn() {
    * @param {{formatted: boolean}} option Default: formatted=true
    */
   const any = (option: optionSSNType = { formatted: true }): string => {
-    const formatted = option?.formatted ?? true;
+    const { formatted } = option;
     const areaNumber = randInt(1, 772).toString().padStart(3, '0');
     return formatted
       ? `${areaNumber}-${randString(NUMERIC_DIGITS, 2)}-${randString(NUMERIC_DIGITS, 4)}`

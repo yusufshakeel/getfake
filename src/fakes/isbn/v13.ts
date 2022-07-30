@@ -38,7 +38,7 @@ function v13() {
    * @return {string}
    */
   const any = (option: v13OptionType = { formatted: true }): string => {
-    const formatted = option?.formatted ?? true;
+    const { formatted } = option;
     const isbnWithoutCheckDigit = getIsbnWithoutCheckDigit();
     const checkDigit = getCheckDigit(isbnWithoutCheckDigit);
     return formatted

@@ -45,8 +45,7 @@ function rut() {
    * @return {string}
    */
   const any = (option: RUTOptionType = { numberOfDigits: 9, formatted: true }): string => {
-    const numberOfDigits = option?.numberOfDigits ?? 9;
-    const formatted = option?.formatted ?? true;
+    const { numberOfDigits, formatted } = option;
     const rutNumberWithoutCheckDigit = randString(NUMERIC_DIGITS, numberOfDigits - 1);
     const sumOfDigits = getSumOfDigits(rutNumberWithoutCheckDigit);
     const checkDigit = getCheckDigit(sumOfDigits);
