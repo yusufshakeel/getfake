@@ -71,34 +71,34 @@ export default {
   },
   english: {
     name: { female: englishNamesFemale, male: englishNamesMale },
-    lastname: englishLastNames
+    lastName: englishLastNames
   },
   hebrew: {
     name: { female: hebrewNamesFemale, male: hebrewNamesMale },
-    lastname: hebrewLastNames
+    lastName: hebrewLastNames
   },
   hindi: {
     name: { female: hindiNamesFemale, male: hindiNamesMale },
-    lastname: hindiLastNames
+    lastName: hindiLastNames
   },
   hispanic: {
     name: { female: hispanicNamesFemale, male: hispanicNamesMale },
-    lastname: hispanicLastNames
+    lastName: hispanicLastNames
   },
   middleEast: {
     name: { female: middleEastNamesFemale, male: middleEastNamesMale },
-    lastname: middleEastLastNames
+    lastName: middleEastLastNames
   },
   slavic: {
     name: { female: slavicNamesFemale, male: slavicNamesMale },
-    lastname: slavicLastNames
+    lastName: slavicLastNames
   },
   southAsian: {
     name: { female: southAsianNamesFemale, male: southAsianNamesMale },
-    lastname: southAsianLastNames
+    lastName: southAsianLastNames
   },
   southEastAsian: {
     name: { female: southEastAsianNamesFemale, male: southEastAsianNamesMale },
-    lastname: southEastAsianLastNames
+    lastName: southEastAsianLastNames
   }
 };

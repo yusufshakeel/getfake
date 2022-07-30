@@ -1,5 +1,5 @@
 import time from '../../../../src/fakes/time';
-import { DateInstance } from '../../../../src/types/date-instance';
+import { DateInstance } from '../../../../src/types/time/date-instance';
 
 describe('Testing time', () => {
   describe('Testing UTC timestamp', () => {

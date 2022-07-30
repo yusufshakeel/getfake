@@ -9,7 +9,7 @@ import {
   DAY_FULL_NAME
 } from '../../constants';
 
-import { DateInstance } from '../../types/date-instance';
+import { DateInstance } from '../../types/time/date-instance';
 
 function utcTimestamp(): string {
   return new Date().toISOString();
