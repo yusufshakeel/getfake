@@ -20,6 +20,7 @@
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig-cjs.json",
     "build:fresh": "rm -rf lib && npm run build",
+    "build:forcefully": "rm -rf lib && npm run build:esm && npm run build:cjs",
     "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "npx eslint -c .eslintrc.json src",
     "lint:fix:src": "npx eslint --fix -c .eslintrc.json src",
