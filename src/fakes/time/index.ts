@@ -9,6 +9,8 @@ import {
   DAY_FULL_NAME
 } from '../../constants';
 
+import { DateInstance } from '../../types/date-instance';
+
 function utcTimestamp(): string {
   return new Date().toISOString();
 }
@@ -73,49 +75,29 @@ function zerothEpoch(): number {
  * @param {Date} dateInstance
  * @returns {string}
  */
-function formattedDateTime(format: string, dateInstance: Date = new Date()): string {
-  const getMilliseconds = (millisecondsString: string): string => {
-    if (millisecondsString.length === 1) {
-      return `00${millisecondsString}`;
-    } else if (`${millisecondsString}`.length === 2) {
-      return `0${millisecondsString}`;
-    }
-    return millisecondsString;
-  };
-
-  const date = dateInstance.getDate() + 1;
-  const month = dateInstance.getMonth() + 1;
+function formattedDateTime(format: string, dateInstance: DateInstance = new Date()): string {
+  const date = String(dateInstance.getDate() + 1).padStart(2, '0');
+  const month = String(dateInstance.getMonth() + 1).padStart(2, '0');
+  const hours = String(dateInstance.getHours()).padStart(2, '0');
+  const minutes = String(dateInstance.getMinutes()).padStart(2, '0');
+  const seconds = String(dateInstance.getSeconds()).padStart(2, '0');
+  const milliSeconds = String(dateInstance.getMilliseconds()).padStart(3, '0');
 
   return format
     .replace('DDD', DAY_SHORT_NAME[dateInstance.getDay()])
     .replace('DDDD', DAY_FULL_NAME[dateInstance.getDay()])
-    .replace('YYYY', dateInstance.getFullYear())
+    .replace('YYYY', String(dateInstance.getFullYear()))
     .replace('MMMM', MONTH_FULL_NAME[dateInstance.getMonth()])
     .replace('MMM', MONTH_SHORT_NAME[dateInstance.getMonth()])
-    .replace(
-      'hh',
-      `${dateInstance.getHours()}`.length === 1
-        ? `0${dateInstance.getHours()}`
-        : dateInstance.getHours()
-    )
-    .replace(
-      'mm',
-      `${dateInstance.getMinutes()}`.length === 1
-        ? `0${dateInstance.getMinutes()}`
-        : dateInstance.getMinutes()
-    )
-    .replace(
-      'ss',
-      `${dateInstance.getSeconds()}`.length === 1
-        ? `0${dateInstance.getSeconds()}`
-        : dateInstance.getSeconds()
-    )
-    .replace('sss', getMilliseconds(`${dateInstance.getMilliseconds()}`))
-    .replace('MM', `${month}`.length === 1 ? `0${month}` : month)
-    .replace('DD', `${date}`.length === 1 ? `0${date}` : date);
+    .replace('hh', hours)
+    .replace('mm', minutes)
+    .replace('ss', seconds)
+    .replace('sss', milliSeconds)
+    .replace('MM', month)
+    .replace('DD', date);
 }
 
-module.exports = {
+export default {
   utcTimestamp,
   epoch,
   epochInMicroSeconds,
