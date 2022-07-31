@@ -4,7 +4,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "declaration": true,
-    "sourceMap": true,
+    // "sourceMap": true,
     "esModuleInterop": true,
     "inlineSourceMap": false,
     "lib": [
