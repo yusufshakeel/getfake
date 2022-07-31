@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.33.2-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.33.3-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 Generate fake values.
@@ -55,7 +55,7 @@ Require `getfake`.
 import getfake from 'getfake';
 
 // CommonJs
-const getfake = require('getfake');
+const { getfake } = require('getfake');
 ```
 
 ## Functions

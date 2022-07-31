@@ -1,6 +1,6 @@
 {
   "name": "getfake",
-  "version": "0.33.2",
+  "version": "0.33.3",
   "description": "Generate fake values.",
   "main": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
