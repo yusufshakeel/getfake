@@ -1,5 +1,5 @@
 import time from '../../../../src/fakes/time';
-import { DateInstance } from '../../../../src/types/time/date-instance';
+import { DateInstanceType } from '../../../../src/ts-def/time/date-instance-type';
 
 describe('Testing time', () => {
   describe('Testing UTC timestamp', () => {
@@ -57,7 +57,7 @@ describe('Testing time', () => {
     });
 
     describe('When passing custom date', () => {
-      const fakeDateInstance: DateInstance = {
+      const fakeDateInstance: DateInstanceType = {
         getDate: () => 1,
         getMonth: () => 1,
         getDay: () => 1,

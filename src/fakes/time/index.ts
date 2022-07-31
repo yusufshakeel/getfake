@@ -9,7 +9,7 @@ import {
   DAY_FULL_NAME
 } from '../../constants';
 
-import { DateInstance } from '../../types/time/date-instance';
+import { DateInstanceType } from '../../ts-def/time/date-instance-type';
 
 function utcTimestamp(): string {
   return new Date().toISOString();
@@ -75,7 +75,7 @@ function zerothEpoch(): number {
  * @param {Date} dateInstance
  * @returns {string}
  */
-function formattedDateTime(format: string, dateInstance: DateInstance = new Date()): string {
+function formattedDateTime(format: string, dateInstance: DateInstanceType = new Date()): string {
   const date = String(dateInstance.getDate() + 1).padStart(2, '0');
   const month = String(dateInstance.getMonth() + 1).padStart(2, '0');
   const hours = String(dateInstance.getHours()).padStart(2, '0');
