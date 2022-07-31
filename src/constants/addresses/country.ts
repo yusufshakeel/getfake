@@ -1,4 +1,6 @@
-export default [
+import { CountryType } from '../../ts-def/address/country-type';
+
+const countries: CountryType[] = [
   {
     name: 'Afghanistan',
     capital: 'Kabul',
@@ -2500,3 +2502,5 @@ export default [
     state: 'Harare'
   }
 ];
+
+export default countries;
