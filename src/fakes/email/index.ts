@@ -1,7 +1,7 @@
 import name from '../name';
 const { any: anyName } = name;
 
-type emailAnyOptionType = {
+type EmailAnyOptionType = {
   firstName: string,
   middleName: string,
   lastName: string,
@@ -15,7 +15,7 @@ type emailAnyOptionType = {
  * @returns {string}
  */
 function any(
-  option: emailAnyOptionType = {
+  option: EmailAnyOptionType = {
     firstName: anyName.femaleName(),
     middleName: '',
     lastName: '',

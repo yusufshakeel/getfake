@@ -46,14 +46,14 @@ export default function namesFactory(source: SourceObject) {
   };
 
   return {
+    firstName,
+    middleName,
+    lastName,
     femaleName,
     femaleFirstName,
     femaleMiddleName,
     maleName,
     maleFirstName,
-    maleMiddleName,
-    lastName,
-    middleName,
-    firstName
+    maleMiddleName
   };
 }

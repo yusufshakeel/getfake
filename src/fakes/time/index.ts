@@ -98,12 +98,12 @@ function formattedDateTime(format: string, dateInstance: DateInstanceType = new 
 }
 
 export default {
-  utcTimestamp,
   epoch,
   epochInMicroSeconds,
-  fixedUtcTimestamp,
   fixedEpoch,
-  zerothUtcTimestamp,
   zerothEpoch,
+  utcTimestamp,
+  fixedUtcTimestamp,
+  zerothUtcTimestamp,
   formattedDateTime
 };
