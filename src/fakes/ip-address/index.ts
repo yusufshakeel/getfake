@@ -7,7 +7,7 @@ function any(): string {
   return `${randInt(0, 255)}.${randInt(0, 255)}.${randInt(0, 255)}.${randInt(0, 255)}`;
 }
 
-module.exports = {
+export default {
   any,
   localhost: localhost(),
   privateNetwork10: privateNetwork10(),
