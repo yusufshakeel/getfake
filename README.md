@@ -1,7 +1,7 @@
 # getfake
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.35.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.36.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
 Generate fake values.
@@ -32,6 +32,7 @@ Generate fake values.
   * [Word](#word)
 * [Advance usage](#advance-usage)
   * [From JSON template](#from-json-template)
+  * [getfakeRepeat](#getfakerepeat)
 * [License](#license)
 * [Donate](#donate)
 
@@ -1070,7 +1071,7 @@ const template = {
 const json = getfake.json.fromTemplate(template);
 ```
 
-Example:
+Output for the above template.
 
 ```json
 {
@@ -1138,7 +1139,7 @@ So, the above template will give us the following result.
 }
 ```
 
-Another example.
+#### Another example.
 
 ```json
 {
@@ -1151,6 +1152,67 @@ This one will give the following output.
 ```json
 {
   "datetime": "June Thu - 24/06/2022 00:19:49.489"
+}
+```
+
+## getfakeRepeat
+
+Use `$getfakeRepeat` to repeat an `$item` for a specific number of `$times`.
+
+```json
+{
+  "$getfakeRepeat": {
+    "$times": "positive integer",
+    "$item": "item to repeat"
+  }
+}
+```
+
+Where, `$item` can be string, boolean, number, nested object or array.
+
+In the following example we will repeat the $item twice as $times is set to 2.
+
+```js
+const { getfake } = require('getfake');
+
+const template = {
+  users: {
+    $getfakeRepeat: {
+      $times: 2,
+      $item: {
+        id: { $getfake: 'uuid.any' },
+        username: {
+          firstName: { $getfake: 'name.any.firstName' },
+          lastName: { $getfake: 'name.any.lastName' }
+        }
+      }
+    }
+  }
+};
+
+const json = getfake.json.fromTemplate(template);
+```
+
+This will give us the following output.
+
+```json
+{
+  "users": [
+    {
+      "id": "34e611d4-a850-c793-3087-6638f50ba9f4",
+      "username": {
+        "firstName": "Jane",
+        "lastName": "Doe"
+      }
+    },
+    {
+      "id": "5c3ff84d-ff90-4d5b-254d-e350a7592f84",
+      "username": {
+        "firstName": "John",
+        "lastName": "Doe"
+      }
+    }
+  ]
 }
 ```
 

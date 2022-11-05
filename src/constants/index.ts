@@ -20,3 +20,8 @@ export const SHA224_HASH_LENGTH = 56;
 export const SHA256_HASH_LENGTH = 64;
 export const SHA384_HASH_LENGTH = 96;
 export const SHA512_HASH_LENGTH = 128;
+
+export const JSON_TEMPLATE = {
+  $GETFAKE: '$getfake',
+  $GETFAKE_REPEAT: '$getfakeRepeat'
+};
