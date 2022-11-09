@@ -1,6 +1,6 @@
 import englishLastNames from './english-last-names';
 import englishNamesFemale from './english-names-female';
-import englishNamesMale from './english-name-male';
+import englishNamesMale from './english-names-male';
 
 import hebrewLastNames from './hebrew-last-names';
 import hebrewNamesFemale from './hebrew-names-female';
