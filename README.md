@@ -1,10 +1,60 @@
 # getfake
 
+Generate fake values.
+
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
-[![npm version](https://img.shields.io/badge/npm-0.36.0-blue.svg)](https://www.npmjs.com/package/getfake)
+[![npm version](https://img.shields.io/badge/npm-0.36.1-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
 
-Generate fake values.
+### Use case
+
+Use `getfake` to generate values for development and testing.
+
+Example: Say, we want two users then we can write the following.
+
+```js
+const { getfake } = require('getfake');
+
+const template = {
+  users: {
+    $getfakeRepeat: {
+      $times: 2,
+      $item: {
+        id: { $getfake: 'uuid.any' },
+        username: {
+          firstName: { $getfake: 'name.any.firstName' },
+          lastName: { $getfake: 'name.any.lastName' }
+        }
+      }
+    }
+  }
+};
+
+const json = getfake.json.fromTemplate(template);
+```
+
+This will give us the following output.
+
+```json
+{
+  "users": [
+    {
+      "id": "34e611d4-a850-c793-3087-6638f50ba9f4",
+      "username": {
+        "firstName": "Jane",
+        "lastName": "Doe"
+      }
+    },
+    {
+      "id": "5c3ff84d-ff90-4d5b-254d-e350a7592f84",
+      "username": {
+        "firstName": "John",
+        "lastName": "Doe"
+      }
+    }
+  ]
+}
+```
 
 ## Table of content
 

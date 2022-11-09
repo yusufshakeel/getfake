@@ -31,6 +31,7 @@ export default [
   'Davies',
   'Dawson',
   'Dixon',
+  'Doe',
   'Edwards',
   'Elliott',
   'Evans',

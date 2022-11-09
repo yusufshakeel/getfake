@@ -136,6 +136,7 @@ export default [
   'Jeremiah',
   'Jerrod',
   'Jesse',
+  'John',
   'Jobin',
   'Joel',
   'Jonas',
