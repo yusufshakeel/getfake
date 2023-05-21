@@ -2,6 +2,7 @@
 
 Generate fake values.
 
+[![Build Status](https://github.com/yusufshakeel/getfake/actions/workflows/ci.yml/badge.svg)](https://github.com/yusufshakeel/getfake/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yusufshakeel/getfake)
 [![npm version](https://img.shields.io/badge/npm-0.37.0-blue.svg)](https://www.npmjs.com/package/getfake)
 [![npm Downloads](https://img.shields.io/npm/dm/getfake.svg)](https://www.npmjs.com/package/getfake)
