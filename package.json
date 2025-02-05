@@ -1,6 +1,6 @@
 {
   "name": "getfake",
-  "version": "0.39.1",
+  "version": "0.40.0",
   "description": "Generate fake values.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
