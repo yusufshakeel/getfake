@@ -108,6 +108,3 @@ dist
 
 # macOS
 .DS_Store
-
-# generated file
-lib/
